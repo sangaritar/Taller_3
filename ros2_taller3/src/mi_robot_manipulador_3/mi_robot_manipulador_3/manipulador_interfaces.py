@@ -21,7 +21,7 @@ z = []
 class Robot_manipulador_interfaces(Node):
     def __init__(self):
      
-     super().__init__('robot_manipulador_interface')
+     super().__init__('robot_manipulator_interface')
      self.subscription = self.create_subscription(Vector3,'/robot_manipulator_position', self.listener_callback,10)
      self.subscription = self.create_subscription(Vector3,'/robot_manipulator_goal', self.listener_callback,10)
      self.subscription
