@@ -1,0 +1,17 @@
+Traceback (most recent call last):
+  File "/home/robotica/Taller_3/ros2_taller3/src/mi_robot_manipulador_3/setup.py", line 1, in <module>
+    from setuptools import setup
+  File "/usr/lib/python3/dist-packages/setuptools/__init__.py", line 18, in <module>
+    from setuptools.dist import Distribution
+  File "/usr/lib/python3/dist-packages/setuptools/dist.py", line 36, in <module>
+    import setuptools.command
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 674, in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 577, in module_from_spec
+  File "<frozen importlib._bootstrap>", line 556, in _init_module_attrs
+  File "<frozen importlib._bootstrap>", line 397, in cached
+  File "<frozen importlib._bootstrap_external>", line 513, in _get_cached
+  File "<frozen importlib._bootstrap_external>", line 406, in cache_from_source
+  File "<frozen importlib._bootstrap_external>", line 134, in _path_split
+KeyboardInterrupt

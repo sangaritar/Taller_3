@@ -1,0 +1,19 @@
+[4.508s] Invoking command in '/home/robotica/Taller_3/ros2_taller3/src/mi_robot_manipulador_3': PYTHONPATH=/home/robotica/Taller_3/ros2_taller3/build/mi_robot_manipulador_3/prefix_override:/home/robotica/Taller_3/ros2_taller3/install/mi_robot_manipulador_3/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/mi_robot_manipulador_3 build --build-base /home/robotica/Taller_3/ros2_taller3/build/mi_robot_manipulador_3/build install --record /home/robotica/Taller_3/ros2_taller3/build/mi_robot_manipulador_3/install.log --single-version-externally-managed
+[5.698s] Traceback (most recent call last):
+[5.698s]   File "/home/robotica/Taller_3/ros2_taller3/src/mi_robot_manipulador_3/setup.py", line 1, in <module>
+[5.700s]     from setuptools import setup
+[5.701s]   File "/usr/lib/python3/dist-packages/setuptools/__init__.py", line 18, in <module>
+[5.702s]     from setuptools.dist import Distribution
+[5.703s]   File "/usr/lib/python3/dist-packages/setuptools/dist.py", line 36, in <module>
+[5.703s]     import setuptools.command
+[5.704s]   File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+[5.705s]   File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+[5.705s]   File "<frozen importlib._bootstrap>", line 674, in _load_unlocked
+[5.706s]   File "<frozen importlib._bootstrap>", line 577, in module_from_spec
+[5.706s]   File "<frozen importlib._bootstrap>", line 556, in _init_module_attrs
+[5.707s]   File "<frozen importlib._bootstrap>", line 397, in cached
+[5.707s]   File "<frozen importlib._bootstrap_external>", line 513, in _get_cached
+[5.708s]   File "<frozen importlib._bootstrap_external>", line 406, in cache_from_source
+[5.709s]   File "<frozen importlib._bootstrap_external>", line 134, in _path_split
+[5.710s] KeyboardInterrupt
+[5.868s] Invoked command in '/home/robotica/Taller_3/ros2_taller3/src/mi_robot_manipulador_3' returned '-2': PYTHONPATH=/home/robotica/Taller_3/ros2_taller3/build/mi_robot_manipulador_3/prefix_override:/home/robotica/Taller_3/ros2_taller3/install/mi_robot_manipulador_3/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/mi_robot_manipulador_3 build --build-base /home/robotica/Taller_3/ros2_taller3/build/mi_robot_manipulador_3/build install --record /home/robotica/Taller_3/ros2_taller3/build/mi_robot_manipulador_3/install.log --single-version-externally-managed

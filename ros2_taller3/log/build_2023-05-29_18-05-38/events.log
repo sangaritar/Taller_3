@@ -1,0 +1,140 @@
+[0.000000] (-) TimerEvent: {}
+[0.001149] (mi_robot_manipulador_3) JobQueued: {'identifier': 'mi_robot_manipulador_3', 'dependencies': OrderedDict()}
+[0.001453] (mi_robot_manipulador_3) JobStarted: {'identifier': 'mi_robot_manipulador_3'}
+[0.094164] (-) TimerEvent: {}
+[0.195637] (-) TimerEvent: {}
+[0.296749] (-) TimerEvent: {}
+[0.397952] (-) TimerEvent: {}
+[0.499463] (-) TimerEvent: {}
+[0.600454] (-) TimerEvent: {}
+[0.701944] (-) TimerEvent: {}
+[0.803312] (-) TimerEvent: {}
+[0.904487] (-) TimerEvent: {}
+[1.005542] (-) TimerEvent: {}
+[1.106955] (-) TimerEvent: {}
+[1.208453] (-) TimerEvent: {}
+[1.309847] (-) TimerEvent: {}
+[1.411278] (-) TimerEvent: {}
+[1.512605] (-) TimerEvent: {}
+[1.614096] (-) TimerEvent: {}
+[1.715549] (-) TimerEvent: {}
+[1.817073] (-) TimerEvent: {}
+[1.918355] (-) TimerEvent: {}
+[2.019682] (-) TimerEvent: {}
+[2.121261] (-) TimerEvent: {}
+[2.222704] (-) TimerEvent: {}
+[2.325055] (-) TimerEvent: {}
+[6.181500] (-) TimerEvent: {}
+[6.282542] (-) TimerEvent: {}
+[6.383436] (-) TimerEvent: {}
+[6.484467] (-) TimerEvent: {}
+[6.585317] (-) TimerEvent: {}
+[6.686408] (-) TimerEvent: {}
+[6.787685] (-) TimerEvent: {}
+[6.888689] (-) TimerEvent: {}
+[6.989766] (-) TimerEvent: {}
+[7.090975] (-) TimerEvent: {}
+[7.191853] (-) TimerEvent: {}
+[7.292835] (-) TimerEvent: {}
+[7.436018] (-) TimerEvent: {}
+[7.537494] (-) TimerEvent: {}
+[7.638893] (-) TimerEvent: {}
+[7.740439] (-) TimerEvent: {}
+[7.841792] (-) TimerEvent: {}
+[7.942976] (-) TimerEvent: {}
+[8.044424] (-) TimerEvent: {}
+[8.145735] (-) TimerEvent: {}
+[8.247108] (-) TimerEvent: {}
+[8.348573] (-) TimerEvent: {}
+[8.449918] (-) TimerEvent: {}
+[8.551173] (-) TimerEvent: {}
+[8.652514] (-) TimerEvent: {}
+[8.753885] (-) TimerEvent: {}
+[8.855198] (-) TimerEvent: {}
+[8.956847] (-) TimerEvent: {}
+[9.058341] (-) TimerEvent: {}
+[9.159691] (-) TimerEvent: {}
+[9.260996] (-) TimerEvent: {}
+[9.362214] (-) TimerEvent: {}
+[9.463723] (-) TimerEvent: {}
+[9.565036] (-) TimerEvent: {}
+[9.666153] (-) TimerEvent: {}
+[9.767017] (-) TimerEvent: {}
+[9.868062] (-) TimerEvent: {}
+[9.969508] (-) TimerEvent: {}
+[10.070435] (-) TimerEvent: {}
+[10.171370] (-) TimerEvent: {}
+[10.272189] (-) TimerEvent: {}
+[10.373034] (-) TimerEvent: {}
+[10.473973] (-) TimerEvent: {}
+[10.574821] (-) TimerEvent: {}
+[10.675627] (-) TimerEvent: {}
+[10.776644] (-) TimerEvent: {}
+[10.883209] (-) TimerEvent: {}
+[10.985496] (-) TimerEvent: {}
+[11.086619] (-) TimerEvent: {}
+[11.187618] (-) TimerEvent: {}
+[11.288524] (-) TimerEvent: {}
+[11.389388] (-) TimerEvent: {}
+[11.490209] (-) TimerEvent: {}
+[11.591076] (-) TimerEvent: {}
+[11.692051] (-) TimerEvent: {}
+[11.792830] (-) TimerEvent: {}
+[11.893585] (-) TimerEvent: {}
+[11.994354] (-) TimerEvent: {}
+[12.095103] (-) TimerEvent: {}
+[12.195930] (-) TimerEvent: {}
+[12.298188] (-) TimerEvent: {}
+[12.399019] (-) TimerEvent: {}
+[12.499976] (-) TimerEvent: {}
+[12.600994] (-) TimerEvent: {}
+[12.702091] (-) TimerEvent: {}
+[12.803457] (-) TimerEvent: {}
+[12.842539] (mi_robot_manipulador_3) Command: {'cmd': ['/usr/bin/python3', 'setup.py', 'egg_info', '--egg-base', '../../build/mi_robot_manipulador_3', 'build', '--build-base', '/home/robotica/Taller_3/ros2_taller3/build/mi_robot_manipulador_3/build', 'install', '--record', '/home/robotica/Taller_3/ros2_taller3/build/mi_robot_manipulador_3/install.log', '--single-version-externally-managed'], 'cwd': '/home/robotica/Taller_3/ros2_taller3/src/mi_robot_manipulador_3', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'LANGUAGE': 'es:en', 'USER': 'robotica', 'LC_TIME': 'es_CO.UTF-8', 'XDG_SESSION_TYPE': 'x11', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib', 'HOME': '/home/robotica', 'OLDPWD': '/home/robotica/Taller_3', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'LC_MONETARY': 'es_CO.UTF-8', 'SYSTEMD_EXEC_PID': '2049', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'IM_CONFIG_PHASE': '1', 'COLCON_PREFIX_PATH': '/home/robotica/Taller_3/ros2_taller3/install', 'ROS_DISTRO': 'humble', 'LOGNAME': 'robotica', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'robotica', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'ROS_LOCALHOST_ONLY': '0', 'WINDOWPATH': '2', 'PATH': '/opt/ros/humble/bin:/home/robotica/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/robotica-desktop:@/tmp/.ICE-unix/2016,unix/robotica-desktop:/tmp/.ICE-unix/2016', 'PAPERSIZE': 'letter', 'XDG_MENU_PREFIX': 'gnome-', 'LC_ADDRESS': 'es_CO.UTF-8', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/917262db_956a_4faf_a35d_b744f405872d', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':1', 'LANG': 'es_CO.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'LC_TELEPHONE': 'es_CO.UTF-8', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/gdm/Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'GNOME_TERMINAL_SERVICE': ':1.107', 'SSH_AGENT_LAUNCHER': 'gnome-keyring', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'ROS_DOMAIN_ID': '5', 'AMENT_PREFIX_PATH': '/home/robotica/Taller_3/ros2_taller3/install/mi_robot_manipulador_3:/opt/ros/humble', 'SHELL': '/bin/bash', 'LC_NAME': 'es_CO.UTF-8', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'LC_MEASUREMENT': 'es_CO.UTF-8', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', 'LC_IDENTIFICATION': 'es_CO.UTF-8', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/robotica/Taller_3/ros2_taller3/build/mi_robot_manipulador_3', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/robotica/Taller_3/ros2_taller3/build/mi_robot_manipulador_3/prefix_override:/home/robotica/Taller_3/ros2_taller3/install/mi_robot_manipulador_3/lib/python3.10/site-packages:/home/robotica/Taller_3/ros2_taller3/install/mi_robot_manipulador_3/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'LC_NUMERIC': 'es_CO.UTF-8', 'LC_PAPER': 'es_CO.UTF-8', 'COLCON': '1', 'VTE_VERSION': '6800'}, 'shell': False}
+[12.903684] (-) TimerEvent: {}
+[13.005702] (-) TimerEvent: {}
+[13.106767] (-) TimerEvent: {}
+[13.207707] (-) TimerEvent: {}
+[13.308867] (-) TimerEvent: {}
+[13.409694] (-) TimerEvent: {}
+[13.510455] (-) TimerEvent: {}
+[13.611261] (-) TimerEvent: {}
+[13.712053] (-) TimerEvent: {}
+[13.812884] (-) TimerEvent: {}
+[13.913681] (-) TimerEvent: {}
+[14.014502] (-) TimerEvent: {}
+[14.071099] (mi_robot_manipulador_3) StdoutLine: {'line': b'running egg_info\n'}
+[14.074585] (mi_robot_manipulador_3) StdoutLine: {'line': b'writing ../../build/mi_robot_manipulador_3/mi_robot_manipulador_3.egg-info/PKG-INFO\n'}
+[14.076059] (mi_robot_manipulador_3) StdoutLine: {'line': b'writing dependency_links to ../../build/mi_robot_manipulador_3/mi_robot_manipulador_3.egg-info/dependency_links.txt\n'}
+[14.080900] (mi_robot_manipulador_3) StdoutLine: {'line': b'writing entry points to ../../build/mi_robot_manipulador_3/mi_robot_manipulador_3.egg-info/entry_points.txt\n'}
+[14.081623] (mi_robot_manipulador_3) StdoutLine: {'line': b'writing requirements to ../../build/mi_robot_manipulador_3/mi_robot_manipulador_3.egg-info/requires.txt\n'}
+[14.082165] (mi_robot_manipulador_3) StdoutLine: {'line': b'writing top-level names to ../../build/mi_robot_manipulador_3/mi_robot_manipulador_3.egg-info/top_level.txt\n'}
+[14.088898] (mi_robot_manipulador_3) StdoutLine: {'line': b"reading manifest file '../../build/mi_robot_manipulador_3/mi_robot_manipulador_3.egg-info/SOURCES.txt'\n"}
+[14.094797] (mi_robot_manipulador_3) StdoutLine: {'line': b"writing manifest file '../../build/mi_robot_manipulador_3/mi_robot_manipulador_3.egg-info/SOURCES.txt'\n"}
+[14.095590] (mi_robot_manipulador_3) StdoutLine: {'line': b'running build\n'}
+[14.096248] (mi_robot_manipulador_3) StdoutLine: {'line': b'running build_py\n'}
+[14.097920] (mi_robot_manipulador_3) StdoutLine: {'line': b'copying mi_robot_manipulador_3/manipulador_interfaces.py -> /home/robotica/Taller_3/ros2_taller3/build/mi_robot_manipulador_3/build/lib/mi_robot_manipulador_3\n'}
+[14.100787] (mi_robot_manipulador_3) StdoutLine: {'line': b'running install\n'}
+[14.102467] (mi_robot_manipulador_3) StderrLine: {'line': b'/usr/lib/python3/dist-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.\n'}
+[14.104109] (mi_robot_manipulador_3) StderrLine: {'line': b'  warnings.warn(\n'}
+[14.105443] (mi_robot_manipulador_3) StdoutLine: {'line': b'running install_lib\n'}
+[14.110521] (mi_robot_manipulador_3) StdoutLine: {'line': b'copying /home/robotica/Taller_3/ros2_taller3/build/mi_robot_manipulador_3/build/lib/mi_robot_manipulador_3/manipulador_interfaces.py -> /home/robotica/Taller_3/ros2_taller3/install/mi_robot_manipulador_3/lib/python3.10/site-packages/mi_robot_manipulador_3\n'}
+[14.114660] (-) TimerEvent: {}
+[14.120148] (mi_robot_manipulador_3) StdoutLine: {'line': b'byte-compiling /home/robotica/Taller_3/ros2_taller3/install/mi_robot_manipulador_3/lib/python3.10/site-packages/mi_robot_manipulador_3/manipulador_interfaces.py to manipulador_interfaces.cpython-310.pyc\n'}
+[14.125859] (mi_robot_manipulador_3) StdoutLine: {'line': b'running install_data\n'}
+[14.129708] (mi_robot_manipulador_3) StdoutLine: {'line': b'running install_egg_info\n'}
+[14.138331] (mi_robot_manipulador_3) StdoutLine: {'line': b"removing '/home/robotica/Taller_3/ros2_taller3/install/mi_robot_manipulador_3/lib/python3.10/site-packages/mi_robot_manipulador_3-0.0.0-py3.10.egg-info' (and everything under it)\n"}
+[14.152527] (mi_robot_manipulador_3) StdoutLine: {'line': b'Copying ../../build/mi_robot_manipulador_3/mi_robot_manipulador_3.egg-info to /home/robotica/Taller_3/ros2_taller3/install/mi_robot_manipulador_3/lib/python3.10/site-packages/mi_robot_manipulador_3-0.0.0-py3.10.egg-info\n'}
+[14.195892] (mi_robot_manipulador_3) StdoutLine: {'line': b'running install_scripts\n'}
+[14.214861] (-) TimerEvent: {}
+[14.294741] (mi_robot_manipulador_3) StdoutLine: {'line': b'Installing robot_manipulator_interface script to /home/robotica/Taller_3/ros2_taller3/install/mi_robot_manipulador_3/lib/mi_robot_manipulador_3\n'}
+[14.295844] (mi_robot_manipulador_3) StdoutLine: {'line': b'Installing robot_manipulator_planner script to /home/robotica/Taller_3/ros2_taller3/install/mi_robot_manipulador_3/lib/mi_robot_manipulador_3\n'}
+[14.296916] (mi_robot_manipulador_3) StdoutLine: {'line': b'Installing robot_manipulator_teleop script to /home/robotica/Taller_3/ros2_taller3/install/mi_robot_manipulador_3/lib/mi_robot_manipulador_3\n'}
+[14.299042] (mi_robot_manipulador_3) StdoutLine: {'line': b"writing list of installed files to '/home/robotica/Taller_3/ros2_taller3/build/mi_robot_manipulador_3/install.log'\n"}
+[14.315144] (-) TimerEvent: {}
+[14.416691] (-) TimerEvent: {}
+[14.439409] (mi_robot_manipulador_3) CommandEnded: {'returncode': 0}
+[14.517011] (-) TimerEvent: {}
+[14.621353] (-) TimerEvent: {}
+[14.715860] (mi_robot_manipulador_3) JobEnded: {'identifier': 'mi_robot_manipulador_3', 'rc': 0}
+[14.719767] (-) EventReactorShutdown: {}

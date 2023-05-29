@@ -11,10 +11,10 @@ Servo servoRota;
 Servo servoCuerpo; 
 Servo servoBrazo; 
 
-int servoRotaPin = 31; 
-int servoCuerpoPin = 33; 
-int servoBrazoPin = 35; 
-int pos = 90;
+int servoRotaPin = 46; 
+int servoCuerpoPin = 38; 
+int servoBrazoPin = 30; 
+int pos = 45;
 
 float theta1 = 0;
 float theta2 = 0;

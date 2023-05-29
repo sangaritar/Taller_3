@@ -5,7 +5,7 @@ from std_msgs.msg import String
 from geometry_msgs.msg import Vector3
 from pynput import keyboard
 import threading
-from mpl_toolkits.mplot3d import axes3d
+#from mpl_toolkits.mplot3d import axes3d
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 from tkinter import filedialog
@@ -22,21 +22,22 @@ class Robot_manipulador_interfaces(Node):
     def __init__(self):
      
      super().__init__('robot_manipulator_interface')
-     self.subscription = self.create_subscription(Vector3,'/robot_manipulator_position', self.listener_callback,10)
-     self.subscription = self.create_subscription(Vector3,'/robot_manipulator_goal', self.listener_callback,10)
-     self.subscription
+     self.subscription_vel = self.create_subscription(Vector3,'/robot_manipulator_vel', self.listener_callback,10)
+     self.subscription_vel
 
      self.ser = serial.Serial('/dev/ttyACM0', 9600, timeout=1)
-
+     
+ 
     def listener_callback(self, msg):
-       
-       x, y, z = msg.data
-
-       rotacion = x
-       cuerpo = y
-       brazo = z
+       global x, y, z
+       print('holi')
+    
+       rotacion = msg.x
+       cuerpo = msg.y
+       brazo = msg.z
        arduino = f"{rotacion}, {cuerpo}, {brazo}\n"
        self.ser.write(arduino.encode()) 
+       self.get_logger().info(str(msg))
 
 class InterfazManipulador:
     def __init__(self):
@@ -44,6 +45,7 @@ class InterfazManipulador:
         self.root.title("Interfaz de usuario")
         self.create_graph()
         self.root.resizable(0,0)
+        self.ser = serial.Serial('/dev/ttyACM0', 9600, timeout=1)
 
          # Botón para guardar la imagen
         button_guardar = tk.Button(master=self.root, text="Guardar imagen", command=self.save_image)
@@ -54,7 +56,7 @@ class InterfazManipulador:
         while True:
             linea = self.ser.readline().decode('utf-8').rstrip()
             if linea:
-                posx, posy, posz = linea.split(",")
+                posx, posy, po sz = linea.split(",")
 
                 x.append(posx)
                 y.append(posy)
@@ -104,12 +106,12 @@ class MyThread(threading.Thread):
 
 def main():
         rclpy.init()
-        my_gui = InterfazManipulador()
-        my_node =Robot_manipulador_interfaces(my_gui)
-        my_thread = MyThread(my_node,my_gui)
+        my_node = Robot_manipulador_interfaces()
+        my_thread = MyThread(my_node, None)
         my_thread.start()
-        my_gui.start()
-        rclpy.shutdown()
+        my_gui = InterfazManipulador()
+        rclpy.spin(my_node)
+        rclpy.shutdown
        
 
 if __name__ == '__main__':
