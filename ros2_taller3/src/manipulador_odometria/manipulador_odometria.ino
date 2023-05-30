@@ -8,9 +8,9 @@ float distancia2 = 138.6;
 float distancia3 = 155;
 
 
-int servoRotaPin = 46; 
-int servoCuerpoPin = 40; 
-int servoBrazoPin = 35; 
+int servoRotaPin = 44; 
+int servoCuerpoPin = 48; 
+int servoBrazoPin = 30; 
 int pos = 90 ;
 
 Servo servoRota; 
@@ -41,9 +41,23 @@ void setup() {
 void loop() {
   if (Serial.available()) {
 
-   int rotacion = Serial.parseInt();
-   int cuerpo = Serial.parseInt();
-   int brazo = Serial.parseInt();
+  String input_str = Serial.readStringUntil('p');
+ //   Serial.print(input_str);
+//   int rotacion = Serial.parseInt();
+//   int cuerpo = Serial.parseInt();
+//   int brazo = Serial.parseInt();
+
+   String ros2_rotacion = input_str.substring(0,2);
+    float rotacion = ros2_rotacion.toFloat();
+
+    String ros2_cuerpo = input_str.substring(2,4);
+    float cuerpo = ros2_cuerpo.toFloat();
+
+    String ros2_brazo = input_str.substring(4,6);
+    float brazo = ros2_brazo.toFloat();
+
+
+
     
     // Servo de rotación
     int girar = constrain(rotacion, -90, 90); //Limita el movimiento 
@@ -62,44 +76,7 @@ void loop() {
     int nuevaPosBrazo = servoBrazo.read() + girarBrazo; //Posicion nueva
     nuevaPosBrazo = constrain(nuevaPosBrazo, 0, 180);
     servoBrazo.write(nuevaPosBrazo);
-//
-//    String mensaje = Serial.readStringUntil('\n');
-//
-//    int rotacion, cuerpo, brazo;
-//    
-//    int valores[3];
-//    int count = 0;
-//    char* token = strtok((char*)mensaje.c_str(), ",");
-//    
-//    while (token != NULL && count < 3) {
-//      valores[count] = atoi(token);
-//      count++;
-//      token = strtok(NULL, ",");
-//    }
-//    
-//    if (count >= 3) {
-//      rotacion = valores[0];
-//      cuerpo = valores[1];
-//      brazo = valores[2];
-//      
-//      // Servo de rotación
-//      int girar = constrain(rotacion, -90, 90);
-//      int nuevaPos = servoRota.read() + girar;
-//      nuevaPos = constrain(nuevaPos, 0, 180);
-//      servoRota.write(nuevaPos);
-//  
-//      // Servo de cuerpo
-//      int girarCuerpo = constrain(cuerpo, -90, 90);
-//      int nuevaPosCuerpo = servoCuerpo.read() + girarCuerpo;
-//      nuevaPosCuerpo = constrain(nuevaPosCuerpo, 0, 180);
-//      servoCuerpo.write(nuevaPosCuerpo);
-//  
-//      // Servo de brazo
-//      int girarBrazo = constrain(brazo, -90, 90);
-//      int nuevaPosBrazo = servoBrazo.read() + girarBrazo;
-//      nuevaPosBrazo = constrain(nuevaPosBrazo, 0, 180);
-//      servoBrazo.write(nuevaPosBrazo);
-//    }
+
     
   }
 
@@ -113,12 +90,15 @@ void loop() {
   y = distancia1*cos(theta2)*sin(theta1) + distancia2*cos(theta2 + theta3)*sin(theta1);
   z = distancia3 + distancia1*sin(theta2) + distancia2*sin(theta2 + theta3);
 
-  Serial.print("Coordenadas: (");
-  Serial.print(x);
-  Serial.print(", ");
-  Serial.print(y);
-  Serial.print(", ");
-  Serial.print(z);
-  Serial.println(")");
-  delay(50);
+  String mensaje = String(x) + ',' + String(y) + ',' + String(z) ;
+  Serial.print(mensaje);
+
+//  Serial.print("Coordenadas: (");
+//  Serial.print(x);
+//  Serial.print(", ");
+//  Serial.print(y);
+//  Serial.print(", ");
+//  Serial.print(z);
+//  Serial.println(")");
+//  delay(50);
 }

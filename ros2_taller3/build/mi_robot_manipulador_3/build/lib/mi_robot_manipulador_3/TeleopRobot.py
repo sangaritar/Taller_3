@@ -11,7 +11,7 @@ class TeleopRobot(Node):
         super().__init__('robot_manipulator_teleop')  
         self.publisher_vel = self.create_publisher(Vector3, '/robot_manipulator_vel', 10)
 
-        timer_period= 0.5
+        timer_period= 0.1
 
         rotacion = input("Ingrese cuantos grados desea rotar el brazo:")
 

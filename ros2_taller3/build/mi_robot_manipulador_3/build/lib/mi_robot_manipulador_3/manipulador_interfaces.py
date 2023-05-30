@@ -22,22 +22,23 @@ class Robot_manipulador_interfaces(Node):
     def __init__(self):
      
      super().__init__('robot_manipulator_interface')
-     self.subscription_vel = self.create_subscription(Vector3,'/robot_manipulator_vel', self.listener_callback,10)
+     self.subscription_vel = self.create_subscription(Vector3,'/robot_manipulator_vel', self.listener_callback,50)
+     self.susbscription_vel2 =  self.create_subscription(Vector3,'/robot_manipulator_goal', self.listener_callback,50)
      self.subscription_vel
+     self.susbscription_vel2
 
      self.ser = serial.Serial('/dev/ttyACM0', 9600, timeout=1)
      
  
     def listener_callback(self, msg):
        global x, y, z
-       print('holi')
-    
        rotacion = msg.x
        cuerpo = msg.y
        brazo = msg.z
-       arduino = f"{rotacion}, {cuerpo}, {brazo}\n"
+       arduino = (str(rotacion) + "," + str(cuerpo) + "," + str(brazo) + "," +'p') 
+       print("llegue" + arduino)
        self.ser.write(arduino.encode()) 
-       self.get_logger().info(str(msg))
+       #self.get_logger().info(str(msg))
 
 class InterfazManipulador:
     def __init__(self):
@@ -52,6 +53,7 @@ class InterfazManipulador:
         button_guardar.pack(side=tk.BOTTOM)
 
         self.root.mainloop()
+
         global x, y, z
         while True:
             linea = self.ser.readline().decode('utf-8').rstrip()
@@ -62,11 +64,23 @@ class InterfazManipulador:
                 y.append(posy)
                 z.append(posz)
      
-        
 
     def create_graph(self):
         global x, y, z
 
+        self.figura = plt.figure()
+        self.ax = self.figura.add_subplot(111)
+        self.ax.set_title("Gráfica del manipulador")
+        self.ax.set_xlabel("x")
+        self.ax.set_ylabel("y")
+
+        # Animación de la gráfica
+        canvas = FigureCanvasTkAgg(self.figura, master=self.root)
+        canvas.get_tk_widget().pack()
+
+        self.line, = self.ax.plot(x, y)
+        self.ani = animation.FuncAnimation(self.figura, self.update, interval=100)
+        '''
         self.figura = plt.figure()
         self.ax = self.figura.add_subplot(111, projection='3d')
         self.ax.set_title("Gráfica del manipulador")
@@ -80,11 +94,16 @@ class InterfazManipulador:
 
         self.line = self.ax.plot(x, y, z)[0]
         self.ani = animation.FuncAnimation(self.figura, self.update, interval=100)
-
+        '''
     def update(self, i):
+        '''
         global x, y, z
         self.line.set_data(x, y)
         self.line.set_3d_properties(z)
+        return self.line
+        '''
+        global x, y
+        self.line.set_data(x, y)
         return self.line
 
     def save_image(self):

@@ -13,7 +13,7 @@ class RobotManipulatorPlanner(Node):
     def __init__(self):
         super().__init__('robot_manipulator_planner')
         self.publisher_vel = self.create_publisher(Vector3, '/robot_manipulator_goal', 10)
-
+        timer_period= 0.1
         # Definir dimensiones del robot 
         self.l1 = 102.4 # dimensión 1 (cm)
         self.l2 = 138.6  # dimensión 2 (cm)
@@ -29,6 +29,7 @@ class RobotManipulatorPlanner(Node):
                 break
             except ValueError:
                 print("Entrada invalida. Porfavor ingrese un número.")
+        self.timer = self.create_timer(timer_period, self.publicar)
 
     def cinematicaInversa(self):
        
@@ -68,8 +69,13 @@ class RobotManipulatorPlanner(Node):
         self.publicar(q1, q2, q3)
     
     def publicar(self, q1, q2, q3):
-        msg = Vector3(x=q1, y=q2, z=q3)
-        self.publisher_vel.publish(msg)
+        message = Vector3()
+        message.x = q1
+        message.y = q2
+        message.z = q3
+        
+        self.publisher_vel.publish(message)
+        self.get_logger().info(str(message))
 
 def main(args=None):
     rclpy.init(args=args)
