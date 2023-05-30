@@ -7,12 +7,11 @@ from pynput import keyboard as kb
 
 
 class TeleopRobot(Node):
-     
-     def __init__(self):
-
+    def __init__(self):
         super().__init__('robot_manipulator_teleop')  
-
         self.publisher_vel = self.create_publisher(Vector3, '/robot_manipulator_vel', 10)
+
+        timer_period= 0.5
 
         rotacion = input("Ingrese cuantos grados desea rotar el brazo:")
 
@@ -32,30 +31,29 @@ class TeleopRobot(Node):
 
         self.brazo= float(brazo)
 
+        self.timer = self.create_timer(timer_period, self.publicar)
+
         self.velocity = {'rotacion': 0.0, 'cuerpo': 0.0, 'brazo': 0.0}
-
         
-
-
-     def on_press(self, key):
+    def on_press(self, key):
         try:
             # Rotacion
             if key.char == 'q':
-                self.velocity = {'rotacion': 1.0, 'cuerpo': 0.0, 'brazo': 0.0}
+                self.velocity = {'rotacion': self.rotacion, 'cuerpo': 0.0, 'brazo': 0.0}
             elif key.char == 'a':
-                self.velocity = {'rotacion': -1.0, 'cuerpo': 0.0, 'brazo': 0.0}
+                self.velocity = {'rotacion': -self.rotacion, 'cuerpo': 0.0, 'brazo': 0.0}
             
             # Cuerpo 
             elif key.char == 'w':
-                self.velocity = {'rotacion': 0.0, 'cuerpo': 1.0, 'brazo': 0.0}
+                self.velocity = {'rotacion': 0.0, 'cuerpo': self.cuerpo, 'brazo': 0.0}
             elif key.char == 's':
-                self.velocity = {'rotacion': 0.0, 'cuerpo': -1.0, 'brazo': 0.0}
+                self.velocity = {'rotacion': 0.0, 'cuerpo': -self.cuerpo, 'brazo': 0.0}
 
             #Brazo
             elif key.char == 'e':
-                self.velocity = {'rotacion': 0.0, 'cuerpo': 0.0, 'brazo': 1.0}
+                self.velocity = {'rotacion': 0.0, 'cuerpo': 0.0, 'brazo': self.brazo}
             elif key.char == 'd':
-                self.velocity = {'rotacion': 0.0, 'cuerpo': 0.0, 'brazo': -1.0}
+                self.velocity = {'rotacion': 0.0, 'cuerpo': 0.0, 'brazo': -self.brazo}
         
             self.publicar(self.velocity['rotacion'], self.velocity['cuerpo'], self.velocity['brazo'])
             
@@ -65,23 +63,20 @@ class TeleopRobot(Node):
             pass
 
         
-     def on_release(self, key):
-       
-       self.velocity = {'rotacion': 0.0, 'cuerpo': 0.0, 'brazo': 0.0}
-       self.publicar(self.velocity['rotacion'], self.velocity['cuerpo'], self.velocity['brazo'])
-
-
-     def publicar(self, rotacion, cuerpo, brazo):
-         message = Vector3()
-         message.x = rotacion
-         message.y = cuerpo
-         message.z = brazo
-
-         self.publisher_vel.publish(message)
-         self.get_logger().info(str(message))
+    def on_release(self, key):
+        self.velocity = {'rotacion': 0.0, 'cuerpo': 0.0, 'brazo': 0.0}
+        self.publicar(self.velocity['rotacion'], self.velocity['cuerpo'], self.velocity['brazo'])
+    
+    def publicar(self,rotacion,cuerpo,brazo):
+        message = Vector3()
+        message.x = rotacion
+        message.y = cuerpo
+        message.z = brazo
+        
+        self.publisher_vel.publish(message)
+        self.get_logger().info(str(message))
 
 def main():
-
     rclpy.init()
     robot_manipulator_teleop = TeleopRobot()
 

@@ -1,0 +1,36 @@
+[3.746s] Invoking command in '/home/robotica/Taller_3/ros2_taller3/src/mi_robot_manipulador_3': PYTHONPATH=/home/robotica/Taller_3/ros2_taller3/build/mi_robot_manipulador_3/prefix_override:/home/robotica/Taller_3/ros2_taller3/install/mi_robot_manipulador_3/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/mi_robot_manipulador_3 build --build-base /home/robotica/Taller_3/ros2_taller3/build/mi_robot_manipulador_3/build install --record /home/robotica/Taller_3/ros2_taller3/build/mi_robot_manipulador_3/install.log --single-version-externally-managed
+[4.902s] running egg_info
+[4.906s] writing ../../build/mi_robot_manipulador_3/mi_robot_manipulador_3.egg-info/PKG-INFO
+[4.911s] writing dependency_links to ../../build/mi_robot_manipulador_3/mi_robot_manipulador_3.egg-info/dependency_links.txt
+[4.912s] writing entry points to ../../build/mi_robot_manipulador_3/mi_robot_manipulador_3.egg-info/entry_points.txt
+[4.912s] writing requirements to ../../build/mi_robot_manipulador_3/mi_robot_manipulador_3.egg-info/requires.txt
+[4.913s] writing top-level names to ../../build/mi_robot_manipulador_3/mi_robot_manipulador_3.egg-info/top_level.txt
+[4.929s] reading manifest file '../../build/mi_robot_manipulador_3/mi_robot_manipulador_3.egg-info/SOURCES.txt'
+[4.935s] writing manifest file '../../build/mi_robot_manipulador_3/mi_robot_manipulador_3.egg-info/SOURCES.txt'
+[4.936s] running build
+[4.937s] running build_py
+[4.941s] copying mi_robot_manipulador_3/TeleopRobot.py -> /home/robotica/Taller_3/ros2_taller3/build/mi_robot_manipulador_3/build/lib/mi_robot_manipulador_3
+[4.943s] copying mi_robot_manipulador_3/manipulador_interfaces.py -> /home/robotica/Taller_3/ros2_taller3/build/mi_robot_manipulador_3/build/lib/mi_robot_manipulador_3
+[4.945s] running install
+[4.946s] /usr/lib/python3/dist-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[4.947s]   warnings.warn(
+[4.948s] running install_lib
+[4.954s] copying /home/robotica/Taller_3/ros2_taller3/build/mi_robot_manipulador_3/build/lib/mi_robot_manipulador_3/TeleopRobot.py -> /home/robotica/Taller_3/ros2_taller3/install/mi_robot_manipulador_3/lib/python3.10/site-packages/mi_robot_manipulador_3
+[4.955s] copying /home/robotica/Taller_3/ros2_taller3/build/mi_robot_manipulador_3/build/lib/mi_robot_manipulador_3/manipulador_interfaces.py -> /home/robotica/Taller_3/ros2_taller3/install/mi_robot_manipulador_3/lib/python3.10/site-packages/mi_robot_manipulador_3
+[4.966s] byte-compiling /home/robotica/Taller_3/ros2_taller3/install/mi_robot_manipulador_3/lib/python3.10/site-packages/mi_robot_manipulador_3/TeleopRobot.py to TeleopRobot.cpython-310.pyc
+[4.973s] byte-compiling /home/robotica/Taller_3/ros2_taller3/install/mi_robot_manipulador_3/lib/python3.10/site-packages/mi_robot_manipulador_3/manipulador_interfaces.py to manipulador_interfaces.cpython-310.pyc
+[4.979s]   File "/home/robotica/Taller_3/ros2_taller3/install/mi_robot_manipulador_3/lib/python3.10/site-packages/mi_robot_manipulador_3/manipulador_interfaces.py", line 59
+[4.979s]     posx, posy, po sz = linea.split(",")
+[4.980s]                    ^^^^^^^^^^^^^^^^^^^^^
+[4.980s] SyntaxError: invalid syntax. Maybe you meant '==' or ':=' instead of '='?
+[4.981s] 
+[4.981s] running install_data
+[4.987s] running install_egg_info
+[4.995s] removing '/home/robotica/Taller_3/ros2_taller3/install/mi_robot_manipulador_3/lib/python3.10/site-packages/mi_robot_manipulador_3-0.0.0-py3.10.egg-info' (and everything under it)
+[5.006s] Copying ../../build/mi_robot_manipulador_3/mi_robot_manipulador_3.egg-info to /home/robotica/Taller_3/ros2_taller3/install/mi_robot_manipulador_3/lib/python3.10/site-packages/mi_robot_manipulador_3-0.0.0-py3.10.egg-info
+[5.016s] running install_scripts
+[5.109s] Installing robot_manipulator_interface script to /home/robotica/Taller_3/ros2_taller3/install/mi_robot_manipulador_3/lib/mi_robot_manipulador_3
+[5.113s] Installing robot_manipulator_planner script to /home/robotica/Taller_3/ros2_taller3/install/mi_robot_manipulador_3/lib/mi_robot_manipulador_3
+[5.114s] Installing robot_manipulator_teleop script to /home/robotica/Taller_3/ros2_taller3/install/mi_robot_manipulador_3/lib/mi_robot_manipulador_3
+[5.116s] writing list of installed files to '/home/robotica/Taller_3/ros2_taller3/build/mi_robot_manipulador_3/install.log'
+[5.250s] Invoked command in '/home/robotica/Taller_3/ros2_taller3/src/mi_robot_manipulador_3' returned '0': PYTHONPATH=/home/robotica/Taller_3/ros2_taller3/build/mi_robot_manipulador_3/prefix_override:/home/robotica/Taller_3/ros2_taller3/install/mi_robot_manipulador_3/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/mi_robot_manipulador_3 build --build-base /home/robotica/Taller_3/ros2_taller3/build/mi_robot_manipulador_3/build install --record /home/robotica/Taller_3/ros2_taller3/build/mi_robot_manipulador_3/install.log --single-version-externally-managed

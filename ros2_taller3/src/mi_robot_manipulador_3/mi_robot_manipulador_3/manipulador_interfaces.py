@@ -56,7 +56,7 @@ class InterfazManipulador:
         while True:
             linea = self.ser.readline().decode('utf-8').rstrip()
             if linea:
-                posx, posy, po sz = linea.split(",")
+                posx, posy, posz = linea.split(",")
 
                 x.append(posx)
                 y.append(posy)

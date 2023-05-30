@@ -7,14 +7,15 @@ float distancia1 = 102.4;
 float distancia2 = 138.6;
 float distancia3 = 155;
 
+
+int servoRotaPin = 46; 
+int servoCuerpoPin = 40; 
+int servoBrazoPin = 35; 
+int pos = 90 ;
+
 Servo servoRota; 
 Servo servoCuerpo; 
 Servo servoBrazo; 
-
-int servoRotaPin = 46; 
-int servoCuerpoPin = 38; 
-int servoBrazoPin = 30; 
-int pos = 45;
 
 float theta1 = 0;
 float theta2 = 0;
@@ -40,10 +41,10 @@ void setup() {
 void loop() {
   if (Serial.available()) {
 
-    int rotacion = Serial.parseInt();
-    int cuerpo = Serial.parseInt();
-    int brazo = Serial.parseInt();
-
+   int rotacion = Serial.parseInt();
+   int cuerpo = Serial.parseInt();
+   int brazo = Serial.parseInt();
+    
     // Servo de rotación
     int girar = constrain(rotacion, -90, 90); //Limita el movimiento 
     int nuevaPos = servoRota.read() + girar; //Posicion nueva
@@ -61,6 +62,44 @@ void loop() {
     int nuevaPosBrazo = servoBrazo.read() + girarBrazo; //Posicion nueva
     nuevaPosBrazo = constrain(nuevaPosBrazo, 0, 180);
     servoBrazo.write(nuevaPosBrazo);
+//
+//    String mensaje = Serial.readStringUntil('\n');
+//
+//    int rotacion, cuerpo, brazo;
+//    
+//    int valores[3];
+//    int count = 0;
+//    char* token = strtok((char*)mensaje.c_str(), ",");
+//    
+//    while (token != NULL && count < 3) {
+//      valores[count] = atoi(token);
+//      count++;
+//      token = strtok(NULL, ",");
+//    }
+//    
+//    if (count >= 3) {
+//      rotacion = valores[0];
+//      cuerpo = valores[1];
+//      brazo = valores[2];
+//      
+//      // Servo de rotación
+//      int girar = constrain(rotacion, -90, 90);
+//      int nuevaPos = servoRota.read() + girar;
+//      nuevaPos = constrain(nuevaPos, 0, 180);
+//      servoRota.write(nuevaPos);
+//  
+//      // Servo de cuerpo
+//      int girarCuerpo = constrain(cuerpo, -90, 90);
+//      int nuevaPosCuerpo = servoCuerpo.read() + girarCuerpo;
+//      nuevaPosCuerpo = constrain(nuevaPosCuerpo, 0, 180);
+//      servoCuerpo.write(nuevaPosCuerpo);
+//  
+//      // Servo de brazo
+//      int girarBrazo = constrain(brazo, -90, 90);
+//      int nuevaPosBrazo = servoBrazo.read() + girarBrazo;
+//      nuevaPosBrazo = constrain(nuevaPosBrazo, 0, 180);
+//      servoBrazo.write(nuevaPosBrazo);
+//    }
     
   }
 
