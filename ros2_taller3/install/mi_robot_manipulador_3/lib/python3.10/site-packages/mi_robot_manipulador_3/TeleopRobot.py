@@ -41,7 +41,7 @@ class TeleopRobot(Node):
             if key.char == 'q':
                 self.velocity = {'rotacion': self.rotacion, 'cuerpo': 0.0, 'brazo': 0.0}
             elif key.char == 'a':
-                self.velocity = {'rotacion': -self.rotacion, 'cuerpo': 0.0, 'brazo': 0.0}
+                self.velocity = {'rotacion': -self.rotacion, 'cuerpo': 0.0, 'brazo': -0.0}
             
             # Cuerpo 
             elif key.char == 'w':
@@ -50,9 +50,9 @@ class TeleopRobot(Node):
                 self.velocity = {'rotacion': 0.0, 'cuerpo': -self.cuerpo, 'brazo': 0.0}
 
             #Brazo
-            elif key.char == 'e':
+            elif key.char == 'z':
                 self.velocity = {'rotacion': 0.0, 'cuerpo': 0.0, 'brazo': self.brazo}
-            elif key.char == 'd':
+            elif key.char == 'x':
                 self.velocity = {'rotacion': 0.0, 'cuerpo': 0.0, 'brazo': -self.brazo}
         
             self.publicar(self.velocity['rotacion'], self.velocity['cuerpo'], self.velocity['brazo'])

@@ -1,0 +1,28 @@
+[2.957s] Invoking command in '/home/robotica/Taller_3/ros2_taller3/src/mi_robot_manipulador_3': PYTHONPATH=/home/robotica/Taller_3/ros2_taller3/build/mi_robot_manipulador_3/prefix_override:/home/robotica/Taller_3/ros2_taller3/install/mi_robot_manipulador_3/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/mi_robot_manipulador_3 build --build-base /home/robotica/Taller_3/ros2_taller3/build/mi_robot_manipulador_3/build install --record /home/robotica/Taller_3/ros2_taller3/build/mi_robot_manipulador_3/install.log --single-version-externally-managed
+[4.099s] running egg_info
+[4.102s] writing ../../build/mi_robot_manipulador_3/mi_robot_manipulador_3.egg-info/PKG-INFO
+[4.103s] writing dependency_links to ../../build/mi_robot_manipulador_3/mi_robot_manipulador_3.egg-info/dependency_links.txt
+[4.104s] writing entry points to ../../build/mi_robot_manipulador_3/mi_robot_manipulador_3.egg-info/entry_points.txt
+[4.105s] writing requirements to ../../build/mi_robot_manipulador_3/mi_robot_manipulador_3.egg-info/requires.txt
+[4.106s] writing top-level names to ../../build/mi_robot_manipulador_3/mi_robot_manipulador_3.egg-info/top_level.txt
+[4.116s] reading manifest file '../../build/mi_robot_manipulador_3/mi_robot_manipulador_3.egg-info/SOURCES.txt'
+[4.120s] writing manifest file '../../build/mi_robot_manipulador_3/mi_robot_manipulador_3.egg-info/SOURCES.txt'
+[4.121s] running build
+[4.121s] running build_py
+[4.122s] copying mi_robot_manipulador_3/manipulador_planner.py -> /home/robotica/Taller_3/ros2_taller3/build/mi_robot_manipulador_3/build/lib/mi_robot_manipulador_3
+[4.125s] running install
+[4.126s] /usr/lib/python3/dist-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[4.127s]   warnings.warn(
+[4.127s] running install_lib
+[4.131s] copying /home/robotica/Taller_3/ros2_taller3/build/mi_robot_manipulador_3/build/lib/mi_robot_manipulador_3/manipulador_planner.py -> /home/robotica/Taller_3/ros2_taller3/install/mi_robot_manipulador_3/lib/python3.10/site-packages/mi_robot_manipulador_3
+[4.135s] byte-compiling /home/robotica/Taller_3/ros2_taller3/install/mi_robot_manipulador_3/lib/python3.10/site-packages/mi_robot_manipulador_3/manipulador_planner.py to manipulador_planner.cpython-310.pyc
+[4.139s] running install_data
+[4.142s] running install_egg_info
+[4.149s] removing '/home/robotica/Taller_3/ros2_taller3/install/mi_robot_manipulador_3/lib/python3.10/site-packages/mi_robot_manipulador_3-0.0.0-py3.10.egg-info' (and everything under it)
+[4.152s] Copying ../../build/mi_robot_manipulador_3/mi_robot_manipulador_3.egg-info to /home/robotica/Taller_3/ros2_taller3/install/mi_robot_manipulador_3/lib/python3.10/site-packages/mi_robot_manipulador_3-0.0.0-py3.10.egg-info
+[4.161s] running install_scripts
+[4.251s] Installing robot_manipulator_interface script to /home/robotica/Taller_3/ros2_taller3/install/mi_robot_manipulador_3/lib/mi_robot_manipulador_3
+[4.251s] Installing robot_manipulator_planner script to /home/robotica/Taller_3/ros2_taller3/install/mi_robot_manipulador_3/lib/mi_robot_manipulador_3
+[4.253s] Installing robot_manipulator_teleop script to /home/robotica/Taller_3/ros2_taller3/install/mi_robot_manipulador_3/lib/mi_robot_manipulador_3
+[4.255s] writing list of installed files to '/home/robotica/Taller_3/ros2_taller3/build/mi_robot_manipulador_3/install.log'
+[4.388s] Invoked command in '/home/robotica/Taller_3/ros2_taller3/src/mi_robot_manipulador_3' returned '0': PYTHONPATH=/home/robotica/Taller_3/ros2_taller3/build/mi_robot_manipulador_3/prefix_override:/home/robotica/Taller_3/ros2_taller3/install/mi_robot_manipulador_3/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/mi_robot_manipulador_3 build --build-base /home/robotica/Taller_3/ros2_taller3/build/mi_robot_manipulador_3/build install --record /home/robotica/Taller_3/ros2_taller3/build/mi_robot_manipulador_3/install.log --single-version-externally-managed

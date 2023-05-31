@@ -9,9 +9,9 @@ float distancia3 = 155;
 
 
 int servoRotaPin = 44; 
-int servoCuerpoPin = 48; 
+int servoCuerpoPin = 34; 
 int servoBrazoPin = 30; 
-int pos = 90 ;
+int pos = 50 ;
 
 Servo servoRota; 
 Servo servoCuerpo; 
@@ -47,14 +47,23 @@ void loop() {
 //   int cuerpo = Serial.parseInt();
 //   int brazo = Serial.parseInt();
 
-   String ros2_rotacion = input_str.substring(0,2);
+    Serial.println(input_str);
+
+    String ros2_rotacion = input_str.substring(0,2);
     float rotacion = ros2_rotacion.toFloat();
+    Serial.print("rotacion"); 
+    Serial.println(rotacion);
 
-    String ros2_cuerpo = input_str.substring(2,4);
+    String ros2_cuerpo = input_str.substring(4,6);
     float cuerpo = ros2_cuerpo.toFloat();
+    Serial.print("cuerpo"); 
+    Serial.println(cuerpo);
 
-    String ros2_brazo = input_str.substring(4,6);
+
+    String ros2_brazo = input_str.substring(8,10);
     float brazo = ros2_brazo.toFloat();
+    Serial.print("brazo"); 
+    Serial.println(brazo);
 
 
 
@@ -91,7 +100,7 @@ void loop() {
   z = distancia3 + distancia1*sin(theta2) + distancia2*sin(theta2 + theta3);
 
   String mensaje = String(x) + ',' + String(y) + ',' + String(z) ;
-  Serial.print(mensaje);
+  //Serial.print(mensaje);
 
 //  Serial.print("Coordenadas: (");
 //  Serial.print(x);
