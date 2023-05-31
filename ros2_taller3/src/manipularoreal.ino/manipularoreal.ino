@@ -11,11 +11,13 @@ float distancia3 = 155;
 int servoRotaPin = 44; 
 int servoCuerpoPin = 34; 
 int servoBrazoPin = 30; 
+int servoGarraPin = 26;
 int pos = 50 ;
 
 Servo servoRota; 
 Servo servoCuerpo; 
 Servo servoBrazo; 
+Servo servoGarra; 
 
 float theta1 = 0;
 float theta2 = 0;
@@ -24,6 +26,13 @@ float theta3 = 0;
 float x = 0;
 float y = 0;
 float z = 0;
+
+bool garraAbierta = false;
+
+
+float coordenadaX_garra = 0.0; // Coordenada X para activar la garra
+float coordenadaY_garra = 0.0; // Coordenada Y para activar la garra
+float coordenadaZ_garra = 0.0; // Coordenada Z para activar la garra
 
 void setup() {
    Serial.begin(9600);
@@ -36,6 +45,9 @@ void setup() {
 
    servoBrazo.attach(servoBrazoPin);
    servoBrazo.write(pos);
+   
+   servoGarra.attach(servoGarraPin); 
+   cerrarGarra();
 }
 
 void loop() {
@@ -90,12 +102,6 @@ void loop() {
 
   }
 
-
-
-   
-    
-  
-
 // Cinematica directa
 
   theta1 = servoRota.read() ; // Ángulo de rotación del servo 1
@@ -107,6 +113,12 @@ void loop() {
   z = distancia3 + distancia1*sin(theta2) + distancia2*sin(theta2 + theta3);
 
   String mensaje = String(x) + ',' + String(y) + ',' + String(z) ;
+
+
+  if (x == coordenadaX_garra && y == coordenadaY_garra && z == coordenadaZ_garra) {
+    cerrarGarra();
+    delay(5000); // Mantener la garra abierta durante 5 segundos
+    cerrarGarra();
   //Serial.print(mensaje);
 
 //  Serial.print("Coordenadas: (");
@@ -118,3 +130,13 @@ void loop() {
 //  Serial.println(")");
 //  delay(50);
 }
+  void abrirGarra() {
+    // Mueve el servo de la garra a la posición abierta
+    servoGarra.write(90);
+    garraAbierta = true;
+    }
+  void cerrarGarra() {
+    // Mueve el servo de la garra a la posición cerrada
+    servoGarra.write(0);
+    garraAbierta = false;
+    } 
