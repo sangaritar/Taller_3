@@ -53,8 +53,9 @@ void loop() {
   if (Serial.available()) {
 
   String input_str = Serial.readStringUntil('p');
-  char charArray[input_str.length()+1];
-  Serial.print("recibido"+ input_str);
+  char charArray[input_str.length() + 1];
+  Serial.println("recibido"+ input_str);
+  
   input_str.toCharArray(charArray, sizeof(charArray));
 
   char* token = strtok(charArray, ",");
@@ -62,24 +63,13 @@ void loop() {
   float rotacion = atof(token);
   token = strtok(NULL, ",");
   
-  //Serial.print("token"); 
-  //Serial.println(token);
-  //Serial.print("rotacion"); 
-  //Serial.println(rotacion);
-
   float cuerpo = atof(token);
   token = strtok(NULL, ",");
-
-  //Serial.print("cuerpo"); 
-  //Serial.println(cuerpo);
-    
+     
   float brazo = atof(token);
   token = strtok(NULL, ",");
 
-  //Serial.print("brazo"); 
-  //Serial.println(brazo);
-
-  token = strtok(NULL, ",");
+  //token = strtok(NULL, ",");
 
 
     
@@ -88,18 +78,21 @@ void loop() {
     int nuevaPos = servoRota.read() + girar; //Posicion nueva
     nuevaPos = constrain(nuevaPos, 0, 180);
     servoRota.write(nuevaPos);
+    delay(500);
 
     // Servo de cuerpo
     int girarCuerpo = constrain(cuerpo, -90, 90); //Limita el movimiento 
     int nuevaPosCuerpo = servoCuerpo.read() + girarCuerpo; //Posicion nueva
     nuevaPosCuerpo = constrain(nuevaPosCuerpo, 0, 180);
     servoCuerpo.write(nuevaPosCuerpo);
+    delay(500);
 
     // Servo de brazo
     int girarBrazo = constrain(brazo, -90, 90); //Limita el movimiento 
     int nuevaPosBrazo = servoBrazo.read() + girarBrazo; //Posicion nueva
     nuevaPosBrazo = constrain(nuevaPosBrazo, 0, 180);
     servoBrazo.write(nuevaPosBrazo);
+    delay(500);
 
   }
 
@@ -120,9 +113,6 @@ void loop() {
     servoGarra.write(90);
     delay(5000); // Mantener la garra abierta durante 5 segundo
     servoGarra.write(0);
-    Serial.print(mensaje);
-
-
 
 }
-  
+}
