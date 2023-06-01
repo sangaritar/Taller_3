@@ -8,10 +8,10 @@ float distancia2 = 138.6;
 float distancia3 = 155;
 
 
-int servoRotaPin = 44; 
-int servoCuerpoPin = 34; 
-int servoBrazoPin = 30; 
-int servoGarraPin = 26;
+int servoRotaPin = 33; 
+int servoCuerpoPin = 27; 
+int servoBrazoPin = 49; 
+int servoGarraPin = 43;
 int pos = 50 ;
 
 Servo servoRota; 
@@ -27,7 +27,6 @@ float x = 0;
 float y = 0;
 float z = 0;
 
-bool garraAbierta = false;
 
 
 float coordenadaX_garra = 0.0; // Coordenada X para activar la garra
@@ -47,7 +46,7 @@ void setup() {
    servoBrazo.write(pos);
    
    servoGarra.attach(servoGarraPin); 
-   cerrarGarra();
+   servoGarra.write(pos);
 }
 
 void loop() {
@@ -55,28 +54,30 @@ void loop() {
 
   String input_str = Serial.readStringUntil('p');
   char charArray[input_str.length()+1];
+  Serial.print("recibido"+ input_str);
   input_str.toCharArray(charArray, sizeof(charArray));
 
   char* token = strtok(charArray, ",");
 
   float rotacion = atof(token);
   token = strtok(NULL, ",");
-  Serial.print("token"); 
-  Serial.println(token);
-  Serial.print("rotacion"); 
-  Serial.println(rotacion);
+  
+  //Serial.print("token"); 
+  //Serial.println(token);
+  //Serial.print("rotacion"); 
+  //Serial.println(rotacion);
 
   float cuerpo = atof(token);
   token = strtok(NULL, ",");
 
-  Serial.print("cuerpo"); 
-  Serial.println(cuerpo);
+  //Serial.print("cuerpo"); 
+  //Serial.println(cuerpo);
     
   float brazo = atof(token);
   token = strtok(NULL, ",");
 
-  Serial.print("brazo"); 
-  Serial.println(brazo);
+  //Serial.print("brazo"); 
+  //Serial.println(brazo);
 
   token = strtok(NULL, ",");
 
@@ -116,10 +117,10 @@ void loop() {
 
 
   if (x == coordenadaX_garra && y == coordenadaY_garra && z == coordenadaZ_garra) {
-    cerrarGarra();
-    delay(5000); // Mantener la garra abierta durante 5 segundos
-    cerrarGarra();
-  //Serial.print(mensaje);
+    servoGarra.write(90);
+    delay(5000); // Mantener la garra abierta durante 5 segundo
+    servoGarra.write(0);
+    Serial.print(mensaje);
 
 //  Serial.print("Coordenadas: (");
 //  Serial.print(x);
@@ -129,14 +130,6 @@ void loop() {
 //  Serial.print(z);
 //  Serial.println(")");
 //  delay(50);
+
 }
-  void abrirGarra() {
-    // Mueve el servo de la garra a la posición abierta
-    servoGarra.write(90);
-    garraAbierta = true;
-    }
-  void cerrarGarra() {
-    // Mueve el servo de la garra a la posición cerrada
-    servoGarra.write(0);
-    garraAbierta = false;
-    } 
+  

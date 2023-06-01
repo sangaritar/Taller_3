@@ -18,30 +18,9 @@ x = []
 y = []
 z = []
 
-class Robot_manipulador_interfaces(Node):
+class Manipulador_interfaz:
     def __init__(self):
-     
-     super().__init__('robot_manipulator_interface')
-     self.subscription_vel = self.create_subscription(Vector3,'/robot_manipulator_vel', self.listener_callback,50)
-     self.susbscription_vel2 =  self.create_subscription(Vector3,'/robot_manipulator_goal', self.listener_callback,50)
-     self.subscription_vel
-     self.susbscription_vel2
-
-     self.ser = serial.Serial('/dev/ttyACM0', 9600, timeout=1)
-     
- 
-    def listener_callback(self, msg):
-       global x, y, z
-       rotacion = msg.x
-       cuerpo = msg.y
-       brazo = msg.z
-       arduino = (str(rotacion) + "," + str(cuerpo) + "," + str(brazo) + "," +'p') 
-       print("llegue" + arduino)
-       self.ser.write(arduino.encode()) 
-       #self.get_logger().info(str(msg))
-
-class InterfazManipulador:
-    def __init__(self):
+        super().__init__('robot_manipulator_interface')
         self.root = tk.Tk()
         self.root.title("Interfaz de usuario")
         self.create_graph()
@@ -111,19 +90,8 @@ class InterfazManipulador:
         if filename:
             plt.savefig(filename)
 
-
-class MyThread(threading.Thread):
-    def __init__(self, node, gui):
-          threading.Thread.__init__(self)
-          self.node = node
-          self.gui = gui
-    
-    def run(self):
-          while True:
-            rclpy.spin_once(self.node)
-
-
 def main():
+        '''
         rclpy.init()
         my_node = Robot_manipulador_interfaces()
         my_thread = MyThread(my_node, None)
@@ -131,6 +99,12 @@ def main():
         my_gui = InterfazManipulador()
         rclpy.spin(my_node)
         rclpy.shutdown
+        '''
+        rclpy.init()
+        robot_manipulator_interface = Manipulador_interfaz()
+        rclpy.spin(robot_manipulator_interface)
+        robot_manipulator_interface.destroy_node()
+        rclpy.shutdown()
        
 
 if __name__ == '__main__':

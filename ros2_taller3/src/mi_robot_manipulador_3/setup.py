@@ -21,8 +21,9 @@ setup(
     entry_points={
         'console_scripts': [
         'robot_manipulator_teleop = mi_robot_manipulador_3.TeleopRobot:main',
-        'robot_manipulator_interface = mi_robot_manipulador_3.manipulador_interfaces:main',
+        'robot_manipulator_controller = mi_robot_manipulador_3.manipulador_controller:main',
         'robot_manipulator_planner = mi_robot_manipulador_3.manipulador_planner:main',
+        'robot_manipulator_interface = mi_robot:manipulador_3.manipulador_vista:main',
 
         ],
     },
