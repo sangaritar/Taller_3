@@ -6,11 +6,13 @@ from geometry_msgs.msg import Vector3
 from pynput import keyboard
 
 
+
 class Robot_manipulador_controller(Node):
     def __init__(self):
      
      super().__init__('robot_manipulator_interface')
-     self.subscription_vel = self.create_subscription(Vector3,'/robot_manipulator_vel', self.listener_callback,50)
+     self.publisher_graf = self.create_publisher(Vector3, '/robot_manipulator_graf', 10)
+     self.subscription_vel = self.create_subscription(Vector3,'/robot_manipulator_vel', self.listener_callback,10)
      #self.susbscription_vel2 =  self.create_subscription(Vector3,'/robot_manipulator_goal', self.listener_callback,50)
      self.subscription_vel
      #self.susbscription_vel2
@@ -19,7 +21,7 @@ class Robot_manipulador_controller(Node):
      
  
     def listener_callback(self, msg):
-       global x, y, z
+
        rotacion = msg.x
        cuerpo = msg.y
        brazo = msg.z
@@ -28,28 +30,25 @@ class Robot_manipulador_controller(Node):
        self.ser.write(arduino.encode()) 
        #self.get_logger().info(str(msg))
 
-'''
-class MyThread(threading.Thread):
-    def __init__(self, node, gui):
-          threading.Thread.__init__(self)
-          self.node = node
-          self.gui = gui
-    
-    def run(self):
-          while True:
-            rclpy.spin_once(self.node)
-'''
+    def recibir_mensaje(self):
+      while True:
+            linea = self.ser.readline().decode('utf-8').rstrip()
+            if linea:
+                  posx, posy, posz = linea.split(",")
+
+                  entrada1 = posx
+                  entrada2 = posy
+                  entrada3 = posz
+
+            message = Vector3()
+            message.x = entrada1
+            message.y = entrada2
+            message.z = entrada3
+        
+            self.publisher_vel.publish(message)
 
 def main():
-        '''
-        rclpy.init()
-        my_node = Robot_manipulador_interfaces()
-        my_thread = MyThread(my_node, None)
-        my_thread.start()
-        my_gui = InterfazManipulador()
-        rclpy.spin(my_node)
-        rclpy.shutdown
-        '''
+
         rclpy.init()
         robot_manipulator_controller = Robot_manipulador_controller()
         rclpy.spin(robot_manipulator_controller)

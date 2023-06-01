@@ -122,14 +122,7 @@ void loop() {
     servoGarra.write(0);
     Serial.print(mensaje);
 
-//  Serial.print("Coordenadas: (");
-//  Serial.print(x);
-//  Serial.print(", ");
-//  Serial.print(y);
-//  Serial.print(", ");
-//  Serial.print(z);
-//  Serial.println(")");
-//  delay(50);
+
 
 }
   
