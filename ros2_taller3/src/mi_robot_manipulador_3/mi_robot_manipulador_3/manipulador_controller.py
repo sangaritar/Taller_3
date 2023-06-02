@@ -5,8 +5,6 @@ from std_msgs.msg import String
 from geometry_msgs.msg import Vector3
 
 
-
-
 class Robot_manipulador_controller(Node):
     def __init__(self):
      
@@ -27,26 +25,33 @@ class Robot_manipulador_controller(Node):
        cuerpo = msg.y
        brazo = msg.z
        arduino = (str(rotacion) + "," + str(cuerpo) + "," + str(brazo) + "," +'p') 
-       print("send" + arduino)
+       print("send " + arduino)
        self.ser.write(arduino.encode()) 
+       self.recibir_mensaje()
        #self.get_logger().info(str(msg))
 
     def recibir_mensaje(self):
-      while True:
-            linea = self.ser.readline().decode('utf-8').rstrip()
-            if linea:
-                  posx, posy, posz = linea.split(",")
 
-                  entrada1 = posx
-                  entrada2 = posy
-                  entrada3 = posz
+      l = self.ser.readline()
+      print(l)
+      linea = l.decode('utf-8').rstrip()
+      print(linea)
+      if linea:
+            sp = linea.split(",")
+            posx, posy, posz = sp[0], sp[1], sp[2]
+
+            entrada1 = float(posx)
+            entrada2 = float(posy)
+            entrada3 = float(posz)
 
             message = Vector3()
             message.x = entrada1
             message.y = entrada2
             message.z = entrada3
-        
-            self.publisher_vel.publish(message)
+
+            print(message)
+      
+      #self.publisher_vel.publish(message)
 
 def main():
 

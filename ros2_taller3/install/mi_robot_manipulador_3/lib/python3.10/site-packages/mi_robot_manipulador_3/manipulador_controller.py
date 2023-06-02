@@ -5,51 +5,56 @@ from std_msgs.msg import String
 from geometry_msgs.msg import Vector3
 
 
-
 class Robot_manipulador_controller(Node):
     def __init__(self):
      
      super().__init__('robot_manipulator_controller')
-     self.subscription_vel = self.create_subscription(Vector3,'/robot_manipulator_vel', self.listener_callback,50)
+     self.subscription_vel = self.create_subscription(Vector3,'/robot_manipulator_vel', self.listener_callback,10)
+     self.publisher_graf = self.create_publisher(Vector3, '/robot_manipulator_graf', 10)
      #self.susbscription_vel2 =  self.create_subscription(Vector3,'/robot_manipulator_goal', self.listener_callback,50)
      self.subscription_vel
+     self.publisher_graf
      #self.susbscription_vel2
 
      self.ser = serial.Serial('/dev/ttyACM0', 9600, timeout=1)
      
  
     def listener_callback(self, msg):
-       global x, y, z
+
        rotacion = msg.x
        cuerpo = msg.y
        brazo = msg.z
        arduino = (str(rotacion) + "," + str(cuerpo) + "," + str(brazo) + "," +'p') 
-       print("send" + arduino)
+       print("send " + arduino)
        self.ser.write(arduino.encode()) 
+       self.recibir_mensaje()
        #self.get_logger().info(str(msg))
 
-'''
-class MyThread(threading.Thread):
-    def __init__(self, node, gui):
-          threading.Thread.__init__(self)
-          self.node = node
-          self.gui = gui
-    
-    def run(self):
-          while True:
-            rclpy.spin_once(self.node)
-'''
+    def recibir_mensaje(self):
+
+      l = self.ser.readline()
+      print(l)
+      linea = l.decode('utf-8').rstrip()
+      print(linea)
+      if linea:
+            sp = linea.split(",")
+            posx, posy, posz = sp[0], sp[1], sp[2]
+
+            entrada1 = float(posx)
+            entrada2 = float(posy)
+            entrada3 = float(posz)
+
+            message = Vector3()
+            message.x = entrada1
+            message.y = entrada2
+            message.z = entrada3
+
+            print(message)
+      
+      #self.publisher_vel.publish(message)
 
 def main():
-        '''
-        rclpy.init()
-        my_node = Robot_manipulador_interfaces()
-        my_thread = MyThread(my_node, None)
-        my_thread.start()
-        my_gui = InterfazManipulador()
-        rclpy.spin(my_node)
-        rclpy.shutdown
-        '''
+
         rclpy.init()
         robot_manipulator_controller = Robot_manipulador_controller()
         rclpy.spin(robot_manipulator_controller)

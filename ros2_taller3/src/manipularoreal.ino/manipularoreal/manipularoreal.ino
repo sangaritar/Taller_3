@@ -7,11 +7,15 @@ float distancia1 = 102.4;
 float distancia2 = 138.6;
 float distancia3 = 155;
 
-
+// Verde
 int servoRotaPin = 33; 
+//Morado
 int servoCuerpoPin = 27; 
+// Amarillo
 int servoBrazoPin = 49; 
+// Naranja 
 int servoGarraPin = 43;
+
 int pos = 50 ;
 
 Servo servoRota; 
@@ -54,7 +58,7 @@ void loop() {
 
   String input_str = Serial.readStringUntil('p');
   char charArray[input_str.length() + 1];
-  Serial.println("recibido"+ input_str);
+  //Serial.println("recibido"+ input_str);
   
   input_str.toCharArray(charArray, sizeof(charArray));
 
@@ -62,6 +66,7 @@ void loop() {
 
   float rotacion = atof(token);
   token = strtok(NULL, ",");
+
   
   float cuerpo = atof(token);
   token = strtok(NULL, ",");
@@ -72,27 +77,28 @@ void loop() {
   //token = strtok(NULL, ",");
 
 
+
     
     // Servo de rotación
     int girar = constrain(rotacion, -90, 90); //Limita el movimiento 
     int nuevaPos = servoRota.read() + girar; //Posicion nueva
     nuevaPos = constrain(nuevaPos, 0, 180);
     servoRota.write(nuevaPos);
-    delay(500);
+    //delay(500);
 
     // Servo de cuerpo
     int girarCuerpo = constrain(cuerpo, -90, 90); //Limita el movimiento 
     int nuevaPosCuerpo = servoCuerpo.read() + girarCuerpo; //Posicion nueva
     nuevaPosCuerpo = constrain(nuevaPosCuerpo, 0, 180);
     servoCuerpo.write(nuevaPosCuerpo);
-    delay(500);
+    //delay(500);
 
     // Servo de brazo
     int girarBrazo = constrain(brazo, -90, 90); //Limita el movimiento 
     int nuevaPosBrazo = servoBrazo.read() + girarBrazo; //Posicion nueva
     nuevaPosBrazo = constrain(nuevaPosBrazo, 0, 180);
     servoBrazo.write(nuevaPosBrazo);
-    delay(500);
+    //delay(500);
 
   }
 
@@ -107,11 +113,12 @@ void loop() {
   z = distancia3 + distancia1*sin(theta2) + distancia2*sin(theta2 + theta3);
 
   String mensaje = String(x) + ',' + String(y) + ',' + String(z) ;
-
+  
+  Serial.println(mensaje);
 
   if (x == coordenadaX_garra && y == coordenadaY_garra && z == coordenadaZ_garra) {
     servoGarra.write(90);
-    delay(5000); // Mantener la garra abierta durante 5 segundo
+    //delay(5000); // Mantener la garra abierta durante 5 segundo
     servoGarra.write(0);
 
 }
