@@ -8,15 +8,15 @@ float distancia2 = 138.6;
 float distancia3 = 155;
 
 // Verde
-int servoRotaPin = 33; 
+int servoRotaPin = 44; 
 //Morado
-int servoCuerpoPin = 27; 
+int servoCuerpoPin = 46; 
 // Amarillo
-int servoBrazoPin = 49; 
+int servoBrazoPin = 12; 
 // Naranja 
-int servoGarraPin = 43;
+int servoGarraPin = 13;
 
-int pos = 50 ;
+int pos = 45 ;
 
 Servo servoRota; 
 Servo servoCuerpo; 
@@ -30,7 +30,6 @@ float theta3 = 0;
 float x = 0;
 float y = 0;
 float z = 0;
-
 
 
 float coordenadaX_garra = 0.0; // Coordenada X para activar la garra
@@ -76,50 +75,28 @@ void loop() {
 
   //token = strtok(NULL, ",");
 
-
-
     
     // Servo de rotación
     int girar = constrain(rotacion, -90, 90); //Limita el movimiento 
     int nuevaPos = servoRota.read() + girar; //Posicion nueva
     nuevaPos = constrain(nuevaPos, 0, 180);
     servoRota.write(nuevaPos);
-    //delay(500);
+ 
 
     // Servo de cuerpo
     int girarCuerpo = constrain(cuerpo, -90, 90); //Limita el movimiento 
     int nuevaPosCuerpo = servoCuerpo.read() + girarCuerpo; //Posicion nueva
     nuevaPosCuerpo = constrain(nuevaPosCuerpo, 0, 180);
     servoCuerpo.write(nuevaPosCuerpo);
-    //delay(500);
+    
 
     // Servo de brazo
     int girarBrazo = constrain(brazo, -90, 90); //Limita el movimiento 
     int nuevaPosBrazo = servoBrazo.read() + girarBrazo; //Posicion nueva
     nuevaPosBrazo = constrain(nuevaPosBrazo, 0, 180);
     servoBrazo.write(nuevaPosBrazo);
-    //delay(500);
+    
 
   }
 
-// Cinematica directa
-
-  theta1 = servoRota.read() ; // Ángulo de rotación del servo 1
-  theta2 = servoCuerpo.read(); // Ángulo de rotación del servo 2
-  theta3 = servoBrazo.read(); // Ángulo de rotación del servo 3
-
-  x = distancia1*cos(theta2)*cos(theta1) + distancia2*cos(theta2 + theta3)*cos(theta1);
-  y = distancia1*cos(theta2)*sin(theta1) + distancia2*cos(theta2 + theta3)*sin(theta1);
-  z = distancia3 + distancia1*sin(theta2) + distancia2*sin(theta2 + theta3);
-
-  String mensaje = String(x) + ',' + String(y) + ',' + String(z) ;
-  
-  Serial.println(mensaje);
-
-  if (x == coordenadaX_garra && y == coordenadaY_garra && z == coordenadaZ_garra) {
-    servoGarra.write(90);
-    //delay(5000); // Mantener la garra abierta durante 5 segundo
-    servoGarra.write(0);
-
-}
 }
