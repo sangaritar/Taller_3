@@ -29,6 +29,7 @@ class Robot_manipulador_controller(Node):
        print("send " + arduino)
        self.ser.write(arduino.encode()) 
        #self.get_logger().info(str(msg))
+       self.cinematica_directa(rotacion, cuerpo, brazo)
 
     def cinematica_directa(self, rotacion, cuerpo, brazo):
 
@@ -59,16 +60,18 @@ class Robot_manipulador_controller(Node):
       message_graf.z = dis_z
       
       self.publisher_graf.publish(message_graf)
+      self.get_logger().info(str(message_graf))
 
 def main():
 
-        rclpy.init()
-        robot_manipulator_controller = Robot_manipulador_controller()
-        rclpy.spin(robot_manipulator_controller)
-        robot_manipulator_controller.destroy_node()
-        rclpy.shutdown()
+    rclpy.init()
+    robot_manipulator_controller = Robot_manipulador_controller()
+    rclpy.spin(robot_manipulator_controller)
+    robot_manipulator_controller.destroy_node()
+    rclpy.shutdown()
+
        
 
 if __name__ == '__main__':
 
-        main()
+    main()

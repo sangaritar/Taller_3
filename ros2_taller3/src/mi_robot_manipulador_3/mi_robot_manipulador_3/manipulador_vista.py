@@ -32,6 +32,8 @@ class Manipulador_interfaz(Node):
        self.z = msg.z
        self.bandera_llego = True
        self.update(0)
+       arduino = (str(self.x) + "," + str(self.y) + "," + str(self.z) + "," +'p')  
+       print("send_grafica " + arduino)
 
 
     def create_graph(self):

@@ -1,0 +1,170 @@
+[8.225s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[8.225s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=4, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0xffff9e503d00>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0xffff9edcd3c0>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0xffff9edcd3c0>>)
+[9.027s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[9.028s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[9.028s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[9.029s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[9.029s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[9.030s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[9.031s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/robotica/Taller_3/ros2_taller3'
+[9.032s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[9.033s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[9.034s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[9.035s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[9.035s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[9.036s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[9.036s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[9.037s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[9.037s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[9.205s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[9.207s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[9.210s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[9.212s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[9.215s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[9.222s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[9.228s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[9.231s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[9.239s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[9.240s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[9.240s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[9.244s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[9.245s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[9.246s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[9.257s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[9.258s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[9.259s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[9.260s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[9.260s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[9.260s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[9.261s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[9.261s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[9.262s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[9.263s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[9.263s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[9.264s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[9.264s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[9.265s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[9.267s] Level 1:colcon.colcon_core.package_identification:_identify(src/manipulador_odometria) by extensions ['ignore', 'ignore_ament_install']
+[9.268s] Level 1:colcon.colcon_core.package_identification:_identify(src/manipulador_odometria) by extension 'ignore'
+[9.269s] Level 1:colcon.colcon_core.package_identification:_identify(src/manipulador_odometria) by extension 'ignore_ament_install'
+[9.270s] Level 1:colcon.colcon_core.package_identification:_identify(src/manipulador_odometria) by extensions ['colcon_pkg']
+[9.271s] Level 1:colcon.colcon_core.package_identification:_identify(src/manipulador_odometria) by extension 'colcon_pkg'
+[9.272s] Level 1:colcon.colcon_core.package_identification:_identify(src/manipulador_odometria) by extensions ['colcon_meta']
+[9.272s] Level 1:colcon.colcon_core.package_identification:_identify(src/manipulador_odometria) by extension 'colcon_meta'
+[9.273s] Level 1:colcon.colcon_core.package_identification:_identify(src/manipulador_odometria) by extensions ['ros']
+[9.273s] Level 1:colcon.colcon_core.package_identification:_identify(src/manipulador_odometria) by extension 'ros'
+[9.275s] Level 1:colcon.colcon_core.package_identification:_identify(src/manipulador_odometria) by extensions ['cmake', 'python']
+[9.276s] Level 1:colcon.colcon_core.package_identification:_identify(src/manipulador_odometria) by extension 'cmake'
+[9.277s] Level 1:colcon.colcon_core.package_identification:_identify(src/manipulador_odometria) by extension 'python'
+[9.277s] Level 1:colcon.colcon_core.package_identification:_identify(src/manipulador_odometria) by extensions ['python_setup_py']
+[9.278s] Level 1:colcon.colcon_core.package_identification:_identify(src/manipulador_odometria) by extension 'python_setup_py'
+[9.280s] Level 1:colcon.colcon_core.package_identification:_identify(src/manipularoreal.ino) by extensions ['ignore', 'ignore_ament_install']
+[9.281s] Level 1:colcon.colcon_core.package_identification:_identify(src/manipularoreal.ino) by extension 'ignore'
+[9.282s] Level 1:colcon.colcon_core.package_identification:_identify(src/manipularoreal.ino) by extension 'ignore_ament_install'
+[9.283s] Level 1:colcon.colcon_core.package_identification:_identify(src/manipularoreal.ino) by extensions ['colcon_pkg']
+[9.284s] Level 1:colcon.colcon_core.package_identification:_identify(src/manipularoreal.ino) by extension 'colcon_pkg'
+[9.285s] Level 1:colcon.colcon_core.package_identification:_identify(src/manipularoreal.ino) by extensions ['colcon_meta']
+[9.286s] Level 1:colcon.colcon_core.package_identification:_identify(src/manipularoreal.ino) by extension 'colcon_meta'
+[9.286s] Level 1:colcon.colcon_core.package_identification:_identify(src/manipularoreal.ino) by extensions ['ros']
+[9.287s] Level 1:colcon.colcon_core.package_identification:_identify(src/manipularoreal.ino) by extension 'ros'
+[9.288s] Level 1:colcon.colcon_core.package_identification:_identify(src/manipularoreal.ino) by extensions ['cmake', 'python']
+[9.288s] Level 1:colcon.colcon_core.package_identification:_identify(src/manipularoreal.ino) by extension 'cmake'
+[9.289s] Level 1:colcon.colcon_core.package_identification:_identify(src/manipularoreal.ino) by extension 'python'
+[9.290s] Level 1:colcon.colcon_core.package_identification:_identify(src/manipularoreal.ino) by extensions ['python_setup_py']
+[9.291s] Level 1:colcon.colcon_core.package_identification:_identify(src/manipularoreal.ino) by extension 'python_setup_py'
+[9.297s] Level 1:colcon.colcon_core.package_identification:_identify(src/manipularoreal.ino/manipularoreal) by extensions ['ignore', 'ignore_ament_install']
+[9.298s] Level 1:colcon.colcon_core.package_identification:_identify(src/manipularoreal.ino/manipularoreal) by extension 'ignore'
+[9.299s] Level 1:colcon.colcon_core.package_identification:_identify(src/manipularoreal.ino/manipularoreal) by extension 'ignore_ament_install'
+[9.300s] Level 1:colcon.colcon_core.package_identification:_identify(src/manipularoreal.ino/manipularoreal) by extensions ['colcon_pkg']
+[9.300s] Level 1:colcon.colcon_core.package_identification:_identify(src/manipularoreal.ino/manipularoreal) by extension 'colcon_pkg'
+[9.301s] Level 1:colcon.colcon_core.package_identification:_identify(src/manipularoreal.ino/manipularoreal) by extensions ['colcon_meta']
+[9.301s] Level 1:colcon.colcon_core.package_identification:_identify(src/manipularoreal.ino/manipularoreal) by extension 'colcon_meta'
+[9.302s] Level 1:colcon.colcon_core.package_identification:_identify(src/manipularoreal.ino/manipularoreal) by extensions ['ros']
+[9.302s] Level 1:colcon.colcon_core.package_identification:_identify(src/manipularoreal.ino/manipularoreal) by extension 'ros'
+[9.304s] Level 1:colcon.colcon_core.package_identification:_identify(src/manipularoreal.ino/manipularoreal) by extensions ['cmake', 'python']
+[9.304s] Level 1:colcon.colcon_core.package_identification:_identify(src/manipularoreal.ino/manipularoreal) by extension 'cmake'
+[9.309s] Level 1:colcon.colcon_core.package_identification:_identify(src/manipularoreal.ino/manipularoreal) by extension 'python'
+[9.311s] Level 1:colcon.colcon_core.package_identification:_identify(src/manipularoreal.ino/manipularoreal) by extensions ['python_setup_py']
+[9.311s] Level 1:colcon.colcon_core.package_identification:_identify(src/manipularoreal.ino/manipularoreal) by extension 'python_setup_py'
+[9.316s] Level 1:colcon.colcon_core.package_identification:_identify(src/mi_robot_manipulador_3) by extensions ['ignore', 'ignore_ament_install']
+[9.317s] Level 1:colcon.colcon_core.package_identification:_identify(src/mi_robot_manipulador_3) by extension 'ignore'
+[9.318s] Level 1:colcon.colcon_core.package_identification:_identify(src/mi_robot_manipulador_3) by extension 'ignore_ament_install'
+[9.319s] Level 1:colcon.colcon_core.package_identification:_identify(src/mi_robot_manipulador_3) by extensions ['colcon_pkg']
+[9.319s] Level 1:colcon.colcon_core.package_identification:_identify(src/mi_robot_manipulador_3) by extension 'colcon_pkg'
+[9.320s] Level 1:colcon.colcon_core.package_identification:_identify(src/mi_robot_manipulador_3) by extensions ['colcon_meta']
+[9.320s] Level 1:colcon.colcon_core.package_identification:_identify(src/mi_robot_manipulador_3) by extension 'colcon_meta'
+[9.321s] Level 1:colcon.colcon_core.package_identification:_identify(src/mi_robot_manipulador_3) by extensions ['ros']
+[9.321s] Level 1:colcon.colcon_core.package_identification:_identify(src/mi_robot_manipulador_3) by extension 'ros'
+[9.363s] DEBUG:colcon.colcon_core.package_identification:Package 'src/mi_robot_manipulador_3' with type 'ros.ament_python' and name 'mi_robot_manipulador_3'
+[9.364s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[9.364s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[9.365s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[9.365s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[9.365s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[10.129s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[10.132s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[10.249s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 1 installed packages in /home/robotica/Taller_3/ros2_taller3/install
+[10.317s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 270 installed packages in /opt/ros/humble
+[10.327s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[13.055s] Level 5:colcon.colcon_core.verb:set package 'mi_robot_manipulador_3' build argument 'cmake_args' from command line to 'None'
+[13.062s] Level 5:colcon.colcon_core.verb:set package 'mi_robot_manipulador_3' build argument 'cmake_target' from command line to 'None'
+[13.062s] Level 5:colcon.colcon_core.verb:set package 'mi_robot_manipulador_3' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[13.063s] Level 5:colcon.colcon_core.verb:set package 'mi_robot_manipulador_3' build argument 'cmake_clean_cache' from command line to 'False'
+[13.063s] Level 5:colcon.colcon_core.verb:set package 'mi_robot_manipulador_3' build argument 'cmake_clean_first' from command line to 'False'
+[13.063s] Level 5:colcon.colcon_core.verb:set package 'mi_robot_manipulador_3' build argument 'cmake_force_configure' from command line to 'False'
+[13.063s] Level 5:colcon.colcon_core.verb:set package 'mi_robot_manipulador_3' build argument 'ament_cmake_args' from command line to 'None'
+[13.064s] Level 5:colcon.colcon_core.verb:set package 'mi_robot_manipulador_3' build argument 'catkin_cmake_args' from command line to 'None'
+[13.064s] Level 5:colcon.colcon_core.verb:set package 'mi_robot_manipulador_3' build argument 'catkin_skip_building_tests' from command line to 'False'
+[13.067s] DEBUG:colcon.colcon_core.verb:Building package 'mi_robot_manipulador_3' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/robotica/Taller_3/ros2_taller3/build/mi_robot_manipulador_3', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/robotica/Taller_3/ros2_taller3/install/mi_robot_manipulador_3', 'merge_install': False, 'path': '/home/robotica/Taller_3/ros2_taller3/src/mi_robot_manipulador_3', 'symlink_install': False, 'test_result_base': None}
+[13.072s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[13.220s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[13.237s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/robotica/Taller_3/ros2_taller3/src/mi_robot_manipulador_3' with build type 'ament_python'
+[13.239s] Level 1:colcon.colcon_core.shell:create_environment_hook('mi_robot_manipulador_3', 'ament_prefix_path')
+[13.466s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[13.467s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/robotica/Taller_3/ros2_taller3/install/mi_robot_manipulador_3/share/mi_robot_manipulador_3/hook/ament_prefix_path.ps1'
+[13.532s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/robotica/Taller_3/ros2_taller3/install/mi_robot_manipulador_3/share/mi_robot_manipulador_3/hook/ament_prefix_path.dsv'
+[13.565s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/robotica/Taller_3/ros2_taller3/install/mi_robot_manipulador_3/share/mi_robot_manipulador_3/hook/ament_prefix_path.sh'
+[13.597s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[13.600s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[18.527s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/robotica/Taller_3/ros2_taller3/src/mi_robot_manipulador_3'
+[18.536s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[18.537s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[21.849s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/robotica/Taller_3/ros2_taller3/src/mi_robot_manipulador_3': PYTHONPATH=/home/robotica/Taller_3/ros2_taller3/build/mi_robot_manipulador_3/prefix_override:/home/robotica/Taller_3/ros2_taller3/install/mi_robot_manipulador_3/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/mi_robot_manipulador_3 build --build-base /home/robotica/Taller_3/ros2_taller3/build/mi_robot_manipulador_3/build install --record /home/robotica/Taller_3/ros2_taller3/build/mi_robot_manipulador_3/install.log --single-version-externally-managed
+[23.915s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/robotica/Taller_3/ros2_taller3/src/mi_robot_manipulador_3' returned '0': PYTHONPATH=/home/robotica/Taller_3/ros2_taller3/build/mi_robot_manipulador_3/prefix_override:/home/robotica/Taller_3/ros2_taller3/install/mi_robot_manipulador_3/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/mi_robot_manipulador_3 build --build-base /home/robotica/Taller_3/ros2_taller3/build/mi_robot_manipulador_3/build install --record /home/robotica/Taller_3/ros2_taller3/build/mi_robot_manipulador_3/install.log --single-version-externally-managed
+[24.119s] Level 1:colcon.colcon_core.environment:checking '/home/robotica/Taller_3/ros2_taller3/install/mi_robot_manipulador_3' for CMake module files
+[24.125s] Level 1:colcon.colcon_core.environment:checking '/home/robotica/Taller_3/ros2_taller3/install/mi_robot_manipulador_3' for CMake config files
+[24.131s] Level 1:colcon.colcon_core.environment:checking '/home/robotica/Taller_3/ros2_taller3/install/mi_robot_manipulador_3/lib'
+[24.132s] Level 1:colcon.colcon_core.environment:checking '/home/robotica/Taller_3/ros2_taller3/install/mi_robot_manipulador_3/bin'
+[24.132s] Level 1:colcon.colcon_core.environment:checking '/home/robotica/Taller_3/ros2_taller3/install/mi_robot_manipulador_3/lib/pkgconfig/mi_robot_manipulador_3.pc'
+[24.134s] Level 1:colcon.colcon_core.environment:checking '/home/robotica/Taller_3/ros2_taller3/install/mi_robot_manipulador_3/lib/python3.10/site-packages'
+[24.134s] Level 1:colcon.colcon_core.shell:create_environment_hook('mi_robot_manipulador_3', 'pythonpath')
+[24.140s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/robotica/Taller_3/ros2_taller3/install/mi_robot_manipulador_3/share/mi_robot_manipulador_3/hook/pythonpath.ps1'
+[24.170s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/robotica/Taller_3/ros2_taller3/install/mi_robot_manipulador_3/share/mi_robot_manipulador_3/hook/pythonpath.dsv'
+[24.184s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/robotica/Taller_3/ros2_taller3/install/mi_robot_manipulador_3/share/mi_robot_manipulador_3/hook/pythonpath.sh'
+[24.191s] Level 1:colcon.colcon_core.environment:checking '/home/robotica/Taller_3/ros2_taller3/install/mi_robot_manipulador_3/bin'
+[24.192s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(mi_robot_manipulador_3)
+[24.201s] INFO:colcon.colcon_core.shell:Creating package script '/home/robotica/Taller_3/ros2_taller3/install/mi_robot_manipulador_3/share/mi_robot_manipulador_3/package.ps1'
+[24.210s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/robotica/Taller_3/ros2_taller3/install/mi_robot_manipulador_3/share/mi_robot_manipulador_3/package.dsv'
+[24.219s] INFO:colcon.colcon_core.shell:Creating package script '/home/robotica/Taller_3/ros2_taller3/install/mi_robot_manipulador_3/share/mi_robot_manipulador_3/package.sh'
+[24.264s] INFO:colcon.colcon_core.shell:Creating package script '/home/robotica/Taller_3/ros2_taller3/install/mi_robot_manipulador_3/share/mi_robot_manipulador_3/package.bash'
+[24.286s] INFO:colcon.colcon_core.shell:Creating package script '/home/robotica/Taller_3/ros2_taller3/install/mi_robot_manipulador_3/share/mi_robot_manipulador_3/package.zsh'
+[24.306s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/robotica/Taller_3/ros2_taller3/install/mi_robot_manipulador_3/share/colcon-core/packages/mi_robot_manipulador_3)
+[24.307s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[24.309s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[24.310s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[24.310s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[24.548s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[24.549s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[24.549s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[24.559s] DEBUG:colcon.colcon_notification.desktop_notification.notify2:Failed to initialize notify2: org.freedesktop.DBus.Error.ServiceUnknown: The name org.freedesktop.Notifications was not provided by any .service files
+[24.560s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[24.570s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/robotica/Taller_3/ros2_taller3/install/local_setup.ps1'
+[24.581s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/robotica/Taller_3/ros2_taller3/install/_local_setup_util_ps1.py'
+[24.598s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/robotica/Taller_3/ros2_taller3/install/setup.ps1'
+[24.612s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/robotica/Taller_3/ros2_taller3/install/local_setup.sh'
+[24.624s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/robotica/Taller_3/ros2_taller3/install/_local_setup_util_sh.py'
+[24.627s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/robotica/Taller_3/ros2_taller3/install/setup.sh'
+[24.644s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/robotica/Taller_3/ros2_taller3/install/local_setup.bash'
+[24.656s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/robotica/Taller_3/ros2_taller3/install/setup.bash'
+[24.671s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/robotica/Taller_3/ros2_taller3/install/local_setup.zsh'
+[24.680s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/robotica/Taller_3/ros2_taller3/install/setup.zsh'
