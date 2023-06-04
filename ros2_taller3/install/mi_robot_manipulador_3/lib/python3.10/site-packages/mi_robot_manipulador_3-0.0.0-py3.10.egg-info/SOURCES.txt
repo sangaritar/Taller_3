@@ -12,6 +12,7 @@ mi_robot_manipulador_3/TeleopRobot.py
 mi_robot_manipulador_3/__init__.py
 mi_robot_manipulador_3/manipulador_controller.py
 mi_robot_manipulador_3/manipulador_planner.py
+mi_robot_manipulador_3/manipulador_punto.py
 mi_robot_manipulador_3/manipulador_vista.py
 resource/mi_robot_manipulador_3
 test/test_copyright.py

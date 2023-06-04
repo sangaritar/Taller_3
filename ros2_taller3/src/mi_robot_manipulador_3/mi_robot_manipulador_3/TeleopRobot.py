@@ -38,23 +38,30 @@ class TeleopRobot(Node):
     def on_press(self, key):
         try:
             # Rotacion
-            if key.char == 'q':
+            if key.char == 't':
                 self.velocity = {'rotacion': self.rotacion, 'cuerpo': 0.0, 'brazo': 0.0}
-            elif key.char == 'a':
+            elif key.char == 'g':
                 self.velocity = {'rotacion': -self.rotacion, 'cuerpo': 0.0, 'brazo': -0.0}
             
             # Cuerpo 
-            elif key.char == 'w':
+            elif key.char == 'y':
                 self.velocity = {'rotacion': 0.0, 'cuerpo': self.cuerpo, 'brazo': 0.0}
-            elif key.char == 's':
+            elif key.char == 'h':
                 self.velocity = {'rotacion': 0.0, 'cuerpo': -self.cuerpo, 'brazo': 0.0}
 
             #Brazo
-            elif key.char == 'z':
+            elif key.char == 'u':
                 self.velocity = {'rotacion': 0.0, 'cuerpo': 0.0, 'brazo': self.brazo}
-            elif key.char == 'x':
+            elif key.char == 'j':
                 self.velocity = {'rotacion': 0.0, 'cuerpo': 0.0, 'brazo': -self.brazo}
-        
+
+            #Garra
+            elif key.char == 'o':
+                self.velocity = {'rotacion': 500.0, 'cuerpo': 500.0, 'brazo': 500.0}
+            elif key.char == 'l':
+                self.velocity = {'rotacion': -500.0, 'cuerpo': -500.0, 'brazo': -500.0}        
+
+
             self.publicar(self.velocity['rotacion'], self.velocity['cuerpo'], self.velocity['brazo'])
             
 

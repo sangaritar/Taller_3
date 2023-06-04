@@ -4,74 +4,71 @@ from std_msgs.msg import String
 from geometry_msgs.msg import Vector3
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import axes3d
-import matplotlib.animation as animation
-from tkinter import filedialog
-import tkinter as tk
-from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 
 
 class Manipulador_interfaz(Node):
     def __init__(self):
         super().__init__('robot_manipulator_interface')
-        self.subscription_graf = self.create_subscription(Vector3,'/robot_manipulator_graf', self.listener_callback,10)
+        self.subscription_graf = self.create_subscription(Vector3, '/robot_manipulator_graf', self.listener_callback, 10)
         self.bandera_llego = False
-        self.root = tk.Tk()
-        self.root.title("Interfaz de usuario")
-        self.create_graph()
-        self.root.resizable(0,0)
 
-        # Botón para guardar la imagen
-        button_guardar = tk.Button(master=self.root, text="Guardar imagen", command=self.save_image)
-        button_guardar.pack(side=tk.BOTTOM)
-        self.root.mainloop()
+        # Crear la figura y el eje 3D
+        self.fig = plt.figure()
+        self.ax = self.fig.add_subplot(111, projection='3d')
+
+        # Coordenadas acumulativas
+        self.cumulative_x = []
+        self.cumulative_y = []
+        self.cumulative_z = []
 
     def listener_callback(self, msg):
+        self.bandera_llego = True
+        x = msg.x
+        y = msg.y
+        z = msg.z
 
-       self.x = msg.x
-       self.y = msg.y
-       self.z = msg.z
-       self.bandera_llego = True
-       self.update(0)
-       arduino = (str(self.x) + "," + str(self.y) + "," + str(self.z) + "," +'p')  
-       print("send_grafica " + arduino)
-
-
-    def create_graph(self):
-        self.figura = plt.figure()
-        self.ax = self.figura.add_subplot(111, projection='3d')
-        self.ax.set_title("Gráfica del manipulador")
-        self.ax.set_xlabel("x")
-        self.ax.set_ylabel("y")
-        self.ax.set_zlabel("z")
-
-        # Animación de la gráfica
-        canvas = FigureCanvasTkAgg(self.figura, master=self.root)
-        canvas.get_tk_widget().pack()
-
-        self.line = self.ax.plot([], [], [])[0]
-        self.ani = animation.FuncAnimation(self.figura, self.update, frames=range(100), interval=100)
-
-    def update(self, i):
-
-        if self.bandera_llego == True:
-            self.line.set_data([self.x], [self.y])
-            self.line.set_3d_properties([self.z])
-            return self.line
+        # Agregar las coordenadas a las coordenadas acumulativas
+        if not self.cumulative_x:
+            # Si es la primera coordenada, simplemente la agregamos
+            self.cumulative_x.append(x)
+            self.cumulative_y.append(y)
+            self.cumulative_z.append(z)
         else:
-             pass
+            # Si ya hay coordenadas acumulativas, sumamos las nuevas coordenadas a las existentes
+            last_x = self.cumulative_x[-1]
+            last_y = self.cumulative_y[-1]
+            last_z = self.cumulative_z[-1]
+            self.cumulative_x.append(last_x + x)
+            self.cumulative_y.append(last_y + y)
+            self.cumulative_z.append(last_z + z)
 
-    def save_image(self):
-        filename = tk.filedialog.asksaveasfilename(defaultextension=".png", filetypes=[("PNG files", "*.png")])
-        if filename:
-            plt.savefig(filename)
+        # Llamar a la función para actualizar la gráfica
+        self.update_graph()
+
+    def update_graph(self):
+        # Limpiar la gráfica
+        self.ax.clear()
+
+        # Dibujar la gráfica de línea en 3D
+        self.ax.plot(self.cumulative_x, self.cumulative_y, self.cumulative_z)
+
+        # Establecer etiquetas de los ejes
+        self.ax.set_xlabel('X')
+        self.ax.set_ylabel('Y')
+        self.ax.set_zlabel('Z')
+
+        # Actualizar la gráfica
+        plt.draw()
+        plt.pause(0.001)
+
 
 def main():
-        rclpy.init()
-        robot_manipulator_interface = Manipulador_interfaz()
-        rclpy.spin('robot_manipulator_interface')
-        robot_manipulator_interface.destroy_node()
-        rclpy.shutdown()
-       
+    rclpy.init()
+    robot_manipulator_interface = Manipulador_interfaz()
+    rclpy.spin(robot_manipulator_interface)  # Pass the instance, not the string
+    robot_manipulator_interface.destroy_node()
+    rclpy.shutdown()
+
 
 if __name__ == '__main__':
-        main()
+    main()

@@ -35,7 +35,7 @@ class Robot_manipulador_controller(Node):
 
       posin_rota = 45 
       posin_cuerpo = 45
-      posin_brazo = 45
+      posin_brazo = 0
 
       posicion_actual_rota = posin_rota + rotacion
       posicion_actual_cuerpo = posin_cuerpo + cuerpo
