@@ -10,9 +10,9 @@ class RobotManipulatorTareaf(Node):
         super().__init__('robot_manipulator_tarea')
         self.publisher_f = self.create_publisher(Vector3, '/robot_manipulator_vel', 10)
 
-        gRot = float(45)
+        gRot = float(0)
         gj1 = float(105)
-        gj2 = float(45)
+        gj2 = float(0)
         
 
         message = Vector3()

@@ -28,7 +28,7 @@ class Robot_manipulador_controller(Node):
        arduino = (str(rotacion) + "," + str(cuerpo) + "," + str(brazo) + "," +'p') 
        print("send " + arduino)
        self.ser.write(arduino.encode()) 
-       #self.get_logger().info(str(msg))
+       self.get_logger().info(str(msg))
        self.cinematica_directa(rotacion, cuerpo, brazo)
 
     def cinematica_directa(self, rotacion, cuerpo, brazo):

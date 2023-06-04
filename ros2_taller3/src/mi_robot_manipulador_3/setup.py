@@ -24,7 +24,7 @@ setup(
         'robot_manipulator_controller = mi_robot_manipulador_3.manipulador_controller:main',
         'robot_manipulator_planner = mi_robot_manipulador_3.manipulador_planner:main',
         'robot_manipulator_interface = mi_robot_manipulador_3.manipulador_vista:main',
-        'robot_manipulator_tarea = mi_robot_manipulador_3.manipulator_punto:main',
+        'robot_manipulator_tarea = mi_robot_manipulador_3.manipulador_punto:main',
 
         ],
     },
