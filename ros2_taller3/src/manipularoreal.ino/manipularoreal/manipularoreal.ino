@@ -96,7 +96,7 @@ if (rotacion == 0.0 && cuerpo == 105.0  && brazo == 0.0){
      servoCuerpo.write(pos);
      servoBrazo.write(0);
    
-    delay(6000);
+    delay(8000);
 
     servoCuerpo.write(nuevaPosCuerpo);
     
@@ -126,23 +126,22 @@ if (rotacion == 0.0 && cuerpo == 105.0  && brazo == 0.0){
     servoCuerpo.write(nuevaPosCuerpo);
 
     // Servo de brazo
-    int girarBrazo = constrain(brazo, -90, 90); // Limita el movimiento 
+    int girarBrazo = constrain(brazo, -45, 45); // Limita el movimiento 
     int nuevaPosBrazo = servoBrazo.read() + girarBrazo; // Posicion nueva
     nuevaPosBrazo = constrain(nuevaPosBrazo, 0, 180);
     servoBrazo.write(nuevaPosBrazo);
-  }
-  
-    //Servo de garra
+
     
-    if (rotacion == 500.0 && cuerpo == 500.0 && brazo == 500.0) { 
+  }
+
+   if (rotacion == 500.0 && cuerpo == 500.0 && brazo == 500.0) { 
     servoGarra.write(0);
   } else if (rotacion == -500 && cuerpo == -500.0 && brazo == -500.0) {
     servoGarra.write(180);
     
   }
-
   
-   
+
   }
 
 }

@@ -41,7 +41,7 @@ class TeleopRobot(Node):
             if key.char == 't':
                 self.velocity = {'rotacion': self.rotacion, 'cuerpo': 0.0, 'brazo': 0.0}
             elif key.char == 'g':
-                self.velocity = {'rotacion': -self.rotacion, 'cuerpo': 0.0, 'brazo': -0.0}
+                self.velocity = {'rotacion': -self.rotacion, 'cuerpo': 0.0, 'brazo': 0.0}
             
             # Cuerpo 
             elif key.char == 'y':

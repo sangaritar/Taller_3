@@ -1,0 +1,36 @@
+[3.423s] Invoking command in '/home/robotica/Taller_3/ros2_taller3/src/mi_robot_manipulador_3': PYTHONPATH=/home/robotica/Taller_3/build/mi_robot_manipulador_3/prefix_override:/home/robotica/Taller_3/install/mi_robot_manipulador_3/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../../build/mi_robot_manipulador_3 build --build-base /home/robotica/Taller_3/build/mi_robot_manipulador_3/build install --record /home/robotica/Taller_3/build/mi_robot_manipulador_3/install.log --single-version-externally-managed
+[4.684s] running egg_info
+[4.687s] writing ../../../build/mi_robot_manipulador_3/mi_robot_manipulador_3.egg-info/PKG-INFO
+[4.689s] writing dependency_links to ../../../build/mi_robot_manipulador_3/mi_robot_manipulador_3.egg-info/dependency_links.txt
+[4.690s] writing entry points to ../../../build/mi_robot_manipulador_3/mi_robot_manipulador_3.egg-info/entry_points.txt
+[4.691s] writing requirements to ../../../build/mi_robot_manipulador_3/mi_robot_manipulador_3.egg-info/requires.txt
+[4.691s] writing top-level names to ../../../build/mi_robot_manipulador_3/mi_robot_manipulador_3.egg-info/top_level.txt
+[4.701s] reading manifest file '../../../build/mi_robot_manipulador_3/mi_robot_manipulador_3.egg-info/SOURCES.txt'
+[4.707s] writing manifest file '../../../build/mi_robot_manipulador_3/mi_robot_manipulador_3.egg-info/SOURCES.txt'
+[4.708s] running build
+[4.709s] running build_py
+[4.710s] copying mi_robot_manipulador_3/manipulador_vista.py -> /home/robotica/Taller_3/build/mi_robot_manipulador_3/build/lib/mi_robot_manipulador_3
+[4.712s] copying mi_robot_manipulador_3/manipulador_planner.py -> /home/robotica/Taller_3/build/mi_robot_manipulador_3/build/lib/mi_robot_manipulador_3
+[4.714s] copying mi_robot_manipulador_3/TeleopRobot.py -> /home/robotica/Taller_3/build/mi_robot_manipulador_3/build/lib/mi_robot_manipulador_3
+[4.718s] running install
+[4.719s] /usr/lib/python3/dist-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[4.720s]   warnings.warn(
+[4.721s] running install_lib
+[4.725s] copying /home/robotica/Taller_3/build/mi_robot_manipulador_3/build/lib/mi_robot_manipulador_3/manipulador_vista.py -> /home/robotica/Taller_3/install/mi_robot_manipulador_3/lib/python3.10/site-packages/mi_robot_manipulador_3
+[4.726s] copying /home/robotica/Taller_3/build/mi_robot_manipulador_3/build/lib/mi_robot_manipulador_3/manipulador_planner.py -> /home/robotica/Taller_3/install/mi_robot_manipulador_3/lib/python3.10/site-packages/mi_robot_manipulador_3
+[4.728s] copying /home/robotica/Taller_3/build/mi_robot_manipulador_3/build/lib/mi_robot_manipulador_3/TeleopRobot.py -> /home/robotica/Taller_3/install/mi_robot_manipulador_3/lib/python3.10/site-packages/mi_robot_manipulador_3
+[4.731s] byte-compiling /home/robotica/Taller_3/install/mi_robot_manipulador_3/lib/python3.10/site-packages/mi_robot_manipulador_3/manipulador_vista.py to manipulador_vista.cpython-310.pyc
+[4.737s] byte-compiling /home/robotica/Taller_3/install/mi_robot_manipulador_3/lib/python3.10/site-packages/mi_robot_manipulador_3/manipulador_planner.py to manipulador_planner.cpython-310.pyc
+[4.740s] byte-compiling /home/robotica/Taller_3/install/mi_robot_manipulador_3/lib/python3.10/site-packages/mi_robot_manipulador_3/TeleopRobot.py to TeleopRobot.cpython-310.pyc
+[4.744s] running install_data
+[4.747s] running install_egg_info
+[4.754s] removing '/home/robotica/Taller_3/install/mi_robot_manipulador_3/lib/python3.10/site-packages/mi_robot_manipulador_3-0.0.0-py3.10.egg-info' (and everything under it)
+[4.756s] Copying ../../../build/mi_robot_manipulador_3/mi_robot_manipulador_3.egg-info to /home/robotica/Taller_3/install/mi_robot_manipulador_3/lib/python3.10/site-packages/mi_robot_manipulador_3-0.0.0-py3.10.egg-info
+[4.764s] running install_scripts
+[4.855s] Installing robot_manipulator_controller script to /home/robotica/Taller_3/install/mi_robot_manipulador_3/lib/mi_robot_manipulador_3
+[4.856s] Installing robot_manipulator_interface script to /home/robotica/Taller_3/install/mi_robot_manipulador_3/lib/mi_robot_manipulador_3
+[4.857s] Installing robot_manipulator_planner script to /home/robotica/Taller_3/install/mi_robot_manipulador_3/lib/mi_robot_manipulador_3
+[4.858s] Installing robot_manipulator_tarea script to /home/robotica/Taller_3/install/mi_robot_manipulador_3/lib/mi_robot_manipulador_3
+[4.859s] Installing robot_manipulator_teleop script to /home/robotica/Taller_3/install/mi_robot_manipulador_3/lib/mi_robot_manipulador_3
+[4.861s] writing list of installed files to '/home/robotica/Taller_3/build/mi_robot_manipulador_3/install.log'
+[4.987s] Invoked command in '/home/robotica/Taller_3/ros2_taller3/src/mi_robot_manipulador_3' returned '0': PYTHONPATH=/home/robotica/Taller_3/build/mi_robot_manipulador_3/prefix_override:/home/robotica/Taller_3/install/mi_robot_manipulador_3/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../../build/mi_robot_manipulador_3 build --build-base /home/robotica/Taller_3/build/mi_robot_manipulador_3/build install --record /home/robotica/Taller_3/build/mi_robot_manipulador_3/install.log --single-version-externally-managed

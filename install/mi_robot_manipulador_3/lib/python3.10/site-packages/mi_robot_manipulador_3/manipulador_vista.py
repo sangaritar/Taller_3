@@ -27,6 +27,10 @@ class Manipulador_interfaz(Node):
         y = msg.y
         z = msg.z
 
+        if x == 66.50712925643501 and y == 107.72659796386725 and z == 360.06774941272255:
+            # Ignorar las coordenadas (0, 0, 0)(x=66.50712925643501, y=107.72659796386725, z=360.06774941272255)
+            return
+
         # Agregar las coordenadas a las coordenadas acumulativas
         if not self.cumulative_x:
             # Si es la primera coordenada, simplemente la agregamos

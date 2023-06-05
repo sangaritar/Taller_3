@@ -44,9 +44,9 @@ class RobotManipulatorPlanner(Node):
         theta3 = math.atan2((-math.sqrt(1 - distance**2)), distance)
         theta2 = math.atan2(self.z - self.l3,math.sqrt(self.x**2+self.y**2)) - math.atan2((self.l2 * (-math.sqrt(1-distance**2))), (self.l1 + self.l2 * distance))  
         
-        print('Theta1: ' + str(theta1))
-        print('Theta2: ' + str(theta2))
-        print('Theta3: ' + str(theta3))
+        #print('Theta1: ' + str(theta1))
+        #print('Theta2: ' + str(theta2))
+        #print('Theta3: ' + str(theta3))
         
         #Convertir angulos a valores entre -pi y pi
         if theta1 > math.pi:
@@ -80,9 +80,9 @@ class RobotManipulatorPlanner(Node):
         gj1 = float(math.degrees(theta2))
         gj2 = float(math.degrees(theta3))
         
-        print('Theta1: ' + str(gRot))
-        print('Theta2: ' + str(gj1))
-        print('Theta3: ' + str(gj2))
+        #print('Theta1: ' + str(gRot))
+        #print('Theta2: ' + str(gj1))
+        #print('Theta3: ' + str(gj2))
 
 
         message = Vector3()
